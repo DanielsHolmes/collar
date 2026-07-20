@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="en" class="__variable_1444d3">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Construction Project Management Workflows Inside NetSuite | BlueCollar</title>
+  <meta name="description" content="Manage submittals, RFIs, analytics, and project document visibility inside BlueCollar Projects without separating workflows from NetSuite financials.">
+  <meta name="keywords" content="NetSuite construction project management, NetSuite submittal management, NetSuite RFI management, construction document management in NetSuite, contractor ERP project management, submittal tracking software, construction RFI software, daily reports in NetSuite, construction financial visibility, job costing and submittals">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://bluecollarcloud.com/construction-project-management-in-netsuite/">
+
+  <meta property="og:title" content="Construction Project Management Workflows Inside NetSuite">
+  <meta property="og:description" content="Manage submittals, RFIs, daily reports, analytics, and project documentation inside BlueCollar Projects for NetSuite.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://bluecollarcloud.com/construction-project-management-in-netsuite/">
+  <meta property="og:image" content="/images/og-pm-features.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "BlueCollar PM Features",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web",
+    "brand": {
+      "@type": "Brand",
+      "name": "BlueCollar Cloud"
+    },
+    "description": "BlueCollar PM Features bring submittals, RFIs, analytics, daily reports, and project document visibility into the BlueCollar Projects environment inside NetSuite. Built for contractors that need cleaner control over project documentation without forcing every workflow into spreadsheets, inboxes, or a separate project management platform.",
+    "url": "https://bluecollarcloud.com/construction-project-management-in-netsuite/"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://bluecollarcloud.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://bluecollarcloud.com/products/" },
+      { "@type": "ListItem", "position": 3, "name": "PM Features", "item": "https://bluecollarcloud.com/construction-project-management-in-netsuite/" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What Are BlueCollar PM Features?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BlueCollar PM Features are construction project management and document management workflows inside BlueCollar Projects for NetSuite. They are designed to help contractors manage submittals, RFIs, analytics, daily reports, project files, approvals, communication, and related visibility in a more structured way. The goal is to bring project documentation closer to financial and operational control."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can BlueCollar Manage Submittals Inside NetSuite?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. BlueCollar supports submittal list views, packages, line items, revision history, email communication, files, status tracking, assignees, managers, due dates, and other key details. This gives contractors a more organized way to manage submittals while keeping the project record in closer alignment with the NetSuite environment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What Makes Submittal Line Items Important?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Submittal line items help connect document management to cost visibility. Instead of only tracking whether a submittal is open or approved, teams can see details such as quantity, unit cost, manufacturer, model, delivery status, receipt date, and approver. That gives contractors a clearer view of what the submittal represents financially and operationally."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can Vendors Reply Without Logging Into Another System?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BlueCollar supports email-based communication for submittals. Project teams can send submittals from NetSuite, and vendors can reply by email. Those responses can be captured back into the project record, which helps reduce friction for external parties while keeping communication tied to the official workflow."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does BlueCollar Replace Procore?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BlueCollar does not need to replace Procore in every environment. Some contractors may use BlueCollar PM Features inside NetSuite for certain workflows, while others may continue using Procore for specific field or project operations. The larger point is that BlueCollar helps bring construction workflows closer to NetSuite's financial backbone."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How Do RFIs Work In BlueCollar?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BlueCollar RFIs create a structured workflow for project questions, clarifications, files, due dates, ownership, status, and visibility into project records. This helps teams avoid losing key decisions in email threads or informal communication. It also gives project managers a cleaner way to track what is open, who is responsible, and what still needs an answer."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What Do The Analytics Show?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BlueCollar analytics provide a dashboard-style view of document workflow health, including counts of open and closed submittals and RFIs. This helps project leaders and executives see where items stand without relying only on manual updates. It gives teams a faster way to spot bottlenecks and follow up on aging items."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Are Workflows Configurable?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. BlueCollar workflows can be configured around approval chains, notification triggers, status rules, permissions, internal comments, external comments, and client-specific needs. That flexibility helps contractors build workflows that fit how they actually operate, rather than forcing every team into the same process."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --bs-primary: #04233d;
+      --bs-primary-rgb: 4, 35, 61;
+      --bs-secondary: #0c3557;
+      --bs-secondary-rgb: 12, 53, 87;
+      --bs-info: #6496c1;
+      --bs-info-rgb: 100, 150, 193;
+      --bs-warning: #ffbf42;
+      --bs-warning-rgb: 255, 191, 66;
+      --bs-orange: #ff9a01;
+      --bs-light: #f8f9fa;
+      --bs-light-rgb: 248, 249, 250;
+      --bs-info-bg-subtle: #e0eaf3;
+      --bs-primary-bg-subtle: #cdd3d8;
+      --bs-body-font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      --bs-body-color: #212529;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: #212529;
+      padding-top: 76px;
+    }
+
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+      color: #04233d;
+    }
+
+    .text-primary { color: #04233d !important; }
+    .text-secondary { color: #0c3557 !important; }
+    .text-orange { color: #ff9a01 !important; }
+
+    .bg-primary { background-color: #04233d !important; }
+    .bg-secondary { background-color: #0c3557 !important; }
+    .bg-info-subtle { background-color: #e0eaf3 !important; }
+    .bg-light-custom { background-color: #f8f9fa !important; }
+
+    .btn-primary {
+      --bs-btn-bg: #04233d;
+      --bs-btn-border-color: #04233d;
+      --bs-btn-hover-bg: #031e34;
+      --bs-btn-hover-border-color: #031c31;
+      --bs-btn-active-bg: #031c31;
+      --bs-btn-active-border-color: #031c31;
+      color: #fff;
+    }
+
+    .btn-outline-secondary {
+      --bs-btn-color: #0c3557;
+      --bs-btn-border-color: #0c3557;
+      --bs-btn-hover-bg: #0c3557;
+      --bs-btn-hover-border-color: #0c3557;
+      --bs-btn-hover-color: #fff;
+    }
+
+    .navbar {
+      background-color: #f8f9fa !important;
+      border-bottom: 2px solid #f8f9fa;
+    }
+
+    .navbar.fixed-top {
+      box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+    }
+
+    .nav-link {
+      font-weight: 500;
+      transition: color .15s ease-in-out, background-color .15s ease-in-out;
+    }
+
+    .nav-link:hover, .nav-link.active {
+      background-color: #e0eaf3;
+    }
+
+    .feature-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: center;
+      color: #04233d;
+      padding: 2rem 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.08);
+      transition: .3s ease-in-out;
+      height: 100%;
+      background: #fff;
+    }
+
+    .feature-box:hover {
+      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+      background-color: #e0eaf3;
+    }
+
+    .feature-box .icon-wrapper {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background-color: #04233d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      flex-shrink: 0;
+    }
+
+    .feature-box .icon-wrapper svg {
+      width: 28px;
+      height: 28px;
+      fill: #fff;
+    }
+
+    .feature-box.text-start {
+      text-align: left;
+    }
+
+    .card-rounded {
+      border-radius: 1rem;
+    }
+
+    .card-rounded-xl {
+      border-radius: 2rem;
+    }
+
+    .shadow-soft {
+      box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.08);
+    }
+
+    .yellow-line {
+      width: 60px;
+      height: 4px;
+      background-color: #ffbf42;
+      border-radius: 2px;
+    }
+
+    .comparison-table th {
+      background-color: #04233d;
+      color: #fff;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .comparison-table td {
+      vertical-align: middle;
+    }
+
+    .comparison-table .check {
+      color: #198754;
+      font-weight: 700;
+    }
+
+    .comparison-table .cross {
+      color: #dc3545;
+      font-weight: 700;
+    }
+
+    .stat-number {
+      font-size: 2.75rem;
+      font-weight: 700;
+      color: #04233d;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.95rem;
+      color: #6c757d;
+      margin-top: 0.5rem;
+    }
+
+    .hero-gradient {
+      background: linear-gradient(345deg, #f5fbff, rgba(245, 251, 255, 0));
+    }
+
+    .cta-section {
+      background-color: #04233d;
+      color: #fff;
+    }
+
+    .cta-section h2 {
+      color: #fff;
+    }
+
+    footer {
+      background-color: #04233d;
+      color: #fff;
+    }
+
+    footer a {
+      color: #f8f9fa;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #ffbf42;
+    }
+
+    .mobile-nav {
+      background: #fff;
+      border-top: 1px solid #dee2e6;
+    }
+
+    .mobile-nav .nav-link {
+      font-size: 0.75rem;
+      padding: 0.5rem;
+      color: #04233d;
+    }
+
+    .sticky-cta-mobile {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1030;
+      background: #fff;
+      border-top: 1px solid #dee2e6;
+      padding: 0.75rem 1rem;
+      box-shadow: 0 -0.25rem 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    .pm-feature-card {
+      border-radius: 1.5rem;
+      padding: 2rem;
+      background: #fff;
+      box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.08);
+      transition: .3s ease-in-out;
+      height: 100%;
+    }
+
+    .pm-feature-card:hover {
+      box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+      background-color: #e0eaf3;
+    }
+
+    .pm-feature-card .icon-badge {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background-color: #04233d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .pm-feature-card .icon-badge svg {
+      width: 24px;
+      height: 24px;
+      fill: #fff;
+    }
+
+    .workflow-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .workflow-step .step-number {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background-color: #04233d;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .workflow-connector {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #6496c1;
+      font-size: 1.25rem;
+    }
+
+    .faq-accordion .accordion-button {
+      font-weight: 600;
+      color: #04233d;
+    }
+
+    .faq-accordion .accordion-button:not(.collapsed) {
+      background-color: #e0eaf3;
+      color: #04233d;
+    }
+
+    .faq-accordion .accordion-button:focus {
+      box-shadow: 0 0 0 0.25rem rgba(4, 35, 61, 0.25);
+    }
+
+    .faq-accordion .accordion-item {
+      border: 1px solid #e0eaf3;
+      margin-bottom: 0.5rem;
+      border-radius: 0.5rem !important;
+      overflow: hidden;
+    }
+
+    @media (max-width: 767.98px) {
+      body {
+        padding-top: 56px;
+        padding-bottom: 70px;
+      }
+      .display-3 {
+        font-size: 2.25rem;
+      }
+      .display-4 {
+        font-size: 2rem;
+      }
+      .stat-number {
+        font-size: 2rem;
+      }
+      .workflow-connector {
+        transform: rotate(90deg);
+        padding: 0.5rem 0;
+      }
+      .comparison-table {
+        font-size: 0.875rem;
+      }
+      .comparison-table th, .comparison-table td {
+        white-space: nowrap;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .workflow-connector {
+        padding: 0 0.75rem;
+      }
+    }
+
+    .detail-list li {
+      margin-bottom: 0.5rem;
+      padding-left: 1.5rem;
+      position: relative;
+    }
+
+    .detail-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 8px;
+      height: 8px;
+      background-color: #6496c1;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Desktop Navigation -->
+  <nav class="navbar navbar-expand fixed-top d-none d-sm-block shadow-lg py-3 bg-light border-bottom border-light border-2">
+    <div class="container">
+      <a class="navbar-brand m-0 d-flex align-items-center" href="index.html">
+        <img src="https://www.bluecollar.cloud/images/logo-bluecollar-standard.svg" alt="BlueCollar Cloud" height="40">
+      </a>
+      <ul class="navbar-nav d-flex flex-row ms-auto align-items-center">
+        <li class="nav-item px-1"><a class="nav-link text-nowrap" href="index.html">Home</a></li>
+        <li class="nav-item px-1"><a class="nav-link text-nowrap" href="/products/">Products</a></li>
+        <li class="nav-item px-1"><a class="nav-link text-nowrap active" href="pm-features.html">PM Features</a></li>
+        <li class="nav-item px-1"><a class="nav-link text-nowrap" href="index.html">Procore Connector</a></li>
+        <li class="nav-item px-1"><a class="nav-link text-nowrap" href="/solutions/">Solutions</a></li>
+        <li class="nav-item px-1"><a class="nav-link text-nowrap" href="/about/">About</a></li>
+        <li class="nav-item px-1"><a class="nav-link text-nowrap" href="/blog/">Blog</a></li>
+        <li class="nav-item px-2">
+          <a class="btn btn-primary px-4 rounded-2 btn-sm shadow-lg" href="#demo">Book A Demo</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Mobile Navigation -->
+  <nav class="navbar d-sm-none p-0 border-top fixed-top bg-white shadow-sm">
+    <div class="container-fluid px-2">
+      <a class="navbar-brand py-2 m-0" href="index.html">
+        <img src="https://www.bluecollar.cloud/images/logo-bluecollar-standard.svg" alt="BlueCollar Cloud" height="32">
+      </a>
+      <a class="btn btn-primary btn-sm px-3 rounded-2" href="#demo">Book A Demo</a>
+    </div>
+  </nav>
+  <nav class="mobile-nav d-sm-none fixed-top" style="top: 52px;">
+    <div class="d-flex flex-row justify-content-around w-100 border-bottom py-1 overflow-x-auto">
+      <a class="nav-link text-nowrap active" href="pm-features.html">PM Features</a>
+      <a class="nav-link text-nowrap" href="index.html">Procore Connector</a>
+      <a class="nav-link text-nowrap" href="/products/">Products</a>
+      <a class="nav-link text-nowrap" href="/solutions/">Solutions</a>
+      <a class="nav-link text-nowrap" href="/about/">About</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient pt-5 pb-4 pb-sm-5">
+      <div class="container text-center pt-4 pt-sm-5">
+        <span class="badge bg-warning text-dark mb-3 px-3 py-2 rounded-pill fw-medium">BlueCollar PM Features</span>
+        <h1 class="display-3 fw-semibold mb-4" data-aos="fade-up">
+          Construction Project Management<br class="d-none d-sm-block">
+          <span class="text-secondary">Workflows Inside NetSuite</span>
+        </h1>
+        <p class="lead text-muted mx-auto mb-4" style="max-width: 720px;" data-aos="fade-up" data-aos-delay="100">
+          Manage submittals, RFIs, analytics, and project document visibility inside BlueCollar Projects without separating workflows from NetSuite financials.
+        </p>
+        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center mb-5" data-aos="fade-up" data-aos-delay="200">
+          <a class="btn btn-primary btn-lg px-5 py-2 rounded-2 shadow-lg" href="#demo">Book A Demo</a>
+          <a class="btn btn-light btn-lg px-5 py-2 shadow-lg border border-secondary border-2 rounded-2" href="#features">See PM Features</a>
+        </div>
+        <p class="text-muted small mb-0" data-aos="fade-up" data-aos-delay="300">
+          Submittals &middot; RFIs &middot; Analytics &middot; Daily Reports &middot; Document Control
+        </p>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-5 border-bottom border-light">
+      <div class="container">
+        <div class="row row-cols-2 row-cols-sm-4 gy-4 text-center justify-content-center">
+          <div class="col" data-aos="fade-up">
+            <div class="stat-number" style="color:#ff9a01;">500+</div>
+            <div class="stat-label">Projects Using PM Features</div>
+          </div>
+          <div class="col" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-number">Submittals</div>
+            <div class="stat-label">Structured Tracking &amp; Approval</div>
+          </div>
+          <div class="col" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-number">RFIs</div>
+            <div class="stat-label">Documented Decision Trail</div>
+          </div>
+          <div class="col" data-aos="fade-up" data-aos-delay="300">
+            <div class="stat-number">NetSuite</div>
+            <div class="stat-label">Native ERP Environment</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
+            <h2 class="display-5 fw-semibold text-center mb-4" data-aos="fade-up">
+              Project Documents Move Fast.<br>
+              <span class="text-secondary">Your ERP Should Not Find Out Later.</span>
+            </h2>
+            <p class="lead text-center text-muted mb-5" data-aos="fade-up" data-aos-delay="100" style="max-width: 800px; margin-left: auto; margin-right: auto;">
+              Construction project teams live in the details. A submittal needs approval before materials move forward. An RFI needs a clear answer before field teams can make the next call. A daily report needs to capture what happened on site before the story gets lost in memory, texts, or scattered notes. The problem is that project documentation often moves through disconnected tools.
+            </p>
+          </div>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 gy-4 justify-content-center" data-aos="fade-up" data-aos-delay="200">
+          <div class="col">
+            <div class="feature-box text-start align-items-start">
+              <h5 class="fw-semibold">Lost Time On Approvals</h5>
+              <p class="text-muted small mb-0">Teams lose time tracing approvals, revisions, and open items across disconnected tools.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="feature-box text-start align-items-start">
+              <h5 class="fw-semibold">Missing Financial Context</h5>
+              <p class="text-muted small mb-0">Accounting teams lack context around project-side decisions that affect cost and billing.</p>
+            </div>
+          </div>
+          <div class="col">
+            <div class="feature-box text-start align-items-start">
+              <h5 class="fw-semibold">Vendor Access Friction</h5>
+              <p class="text-muted small mb-0">Vendors and subcontractors get pulled into clunky access workflows or email chains.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Built For The Way Contractors Work -->
+    <section class="py-5 bg-light-custom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+            <div class="yellow-line mb-3"></div>
+            <h2 class="display-5 fw-semibold mb-4">
+              Built For The Way Contractors<br>
+              <span class="text-secondary">Actually Manage Project Work</span>
+            </h2>
+            <p class="text-muted mb-4">
+              BlueCollar PM Features add construction-specific document management workflows to BlueCollar Projects. The module is designed for contractors that need cleaner control over submittals, RFIs, daily reports, project communication, approvals, and documentation without forcing every workflow into spreadsheets, inboxes, or a separate project management platform.
+            </p>
+            <p class="text-muted mb-4">
+              This is not generic document storage. It is construction project management built around the realities of contractors, project managers, finance teams, vendors, and NetSuite users.
+            </p>
+            <a class="btn btn-primary px-5 rounded-2 btn-lg" href="#demo">Book A Demo</a>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="bg-white rounded-5 p-4 p-sm-5 shadow-soft">
+              <div class="d-flex flex-column gap-3">
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3">
+                  <span class="badge bg-primary rounded-circle p-2" style="width:40px;height:40px;font-size:1rem;">S</span>
+                  <div>
+                    <strong>Submittals</strong>
+                    <div class="small text-muted">Structured tracking with cost visibility</div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3">
+                  <span class="badge bg-secondary rounded-circle p-2" style="width:40px;height:40px;font-size:1rem;">R</span>
+                  <div>
+                    <strong>RFIs</strong>
+                    <div class="small text-muted">Clear decision trail and ownership</div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center gap-3 border-bottom pb-3">
+                  <span class="badge bg-warning text-dark rounded-circle p-2" style="width:40px;height:40px;font-size:1rem;">A</span>
+                  <div>
+                    <strong>Analytics</strong>
+                    <div class="small text-muted">Dashboard visibility into document health</div>
+                  </div>
+                </div>
+                <div class="d-flex align-items-center gap-3">
+                  <span class="badge bg-info rounded-circle p-2" style="width:40px;height:40px;font-size:1rem;">D</span>
+                  <div>
+                    <strong>Daily Reports</strong>
+                    <div class="small text-muted">Job-site records inside NetSuite</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature: Submittals -->
+    <section id="features" class="py-5">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="yellow-line mx-auto mb-3"></div>
+          <h2 class="display-5 fw-semibold mb-3">
+            Manage Submittals With Structure, Status,<br>
+            <span class="text-secondary">And Financial Context</span>
+          </h2>
+          <p class="lead text-muted mx-auto" style="max-width: 680px;">
+            Submittals are more than documents. They confirm that materials, drawings, specs, product data, equipment, or other project details meet the requirements before purchase or installation.
+          </p>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 gy-4">
+          <div class="col" data-aos="fade-up">
+            <div class="pm-feature-card">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-badge">
+                  <svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg>
+                </div>
+                <h5 class="fw-semibold mb-0">Submittal List View</h5>
+              </div>
+              <p class="text-muted small mb-0">Track submittal number, CSI spec section, title, type, revision, status, ball-in-court, assignee, manager, and due date in one structured view.</p>
+            </div>
+          </div>
+          <div class="col" data-aos="fade-up" data-aos-delay="50">
+            <div class="pm-feature-card">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-badge">
+                  <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+                </div>
+                <h5 class="fw-semibold mb-0">Aging Visibility</h5>
+              </div>
+              <p class="text-muted small mb-0">Days open or closed at a glance so teams can quickly spot aging items and follow up before delays compound.</p>
+            </div>
+          </div>
+          <div class="col" data-aos="fade-up" data-aos-delay="100">
+            <div class="pm-feature-card">
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <div class="icon-badge">
+                  <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/></svg>
+                </div>
+                <h5 class="fw-semibold mb-0">Attached Files &amp; Communication</h5>
+              </div>
+              <p class="text-muted small mb-0">Files and communication tied to the project record instead of scattered across email threads or separate drives.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Submittal Packages -->
+    <section class="py-5 bg-light-custom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+            <div class="yellow-line mb-3"></div>
+            <h2 class="display-5 fw-semibold mb-4">
+              Organize Related Work<br>
+              <span class="text-secondary">With Submittal Packages</span>
+            </h2>
+            <p class="text-muted mb-4">
+              Large projects rarely move one document at a time. Submittals often belong to a larger scope, phase, trade, spec section, or deliverable. Without a better way to group them, teams can lose the bigger picture and spend too much time managing individual records in isolation.
+            </p>
+            <p class="text-muted mb-4">
+              BlueCollar supports submittal packages, allowing related items to be grouped under a common workflow. This helps project teams organize documentation in a way that matches how construction work actually happens. A package can make it easier to manage approvals across trades, phases, milestones, or specification areas.
+            </p>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="bg-white rounded-5 p-4 p-sm-5 shadow-soft">
+              <div class="fw-bold text-primary mb-3">Submittal Package Example</div>
+              <div class="border rounded-4 p-3 mb-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-semibold">Structural Steel Package</span>
+                  <span class="badge bg-warning text-dark">3 Open</span>
+                </div>
+                <div class="small text-muted mb-2">Phase 2 - Superstructure</div>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge bg-info bg-opacity-25 text-primary">05-100 Shop Drawings</span>
+                  <span class="badge bg-info bg-opacity-25 text-primary">05-200 Connections</span>
+                  <span class="badge bg-info bg-opacity-25 text-primary">05-300 Bolting Specs</span>
+                </div>
+              </div>
+              <div class="border rounded-4 p-3">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-semibold">MEP Package</span>
+                  <span class="badge bg-success text-white">1 Open</span>
+                </div>
+                <div class="small text-muted mb-2">Phase 1 - Core &amp; Shell</div>
+                <div class="d-flex flex-wrap gap-1">
+                  <span class="badge bg-info bg-opacity-25 text-primary">22-100 Plumbing</span>
+                  <span class="badge bg-info bg-opacity-25 text-primary">23-100 HVAC</span>
+                  <span class="badge bg-info bg-opacity-25 text-primary">26-100 Electrical</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Line-Item Cost Visibility -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left">
+            <div class="yellow-line mb-3"></div>
+            <h2 class="display-5 fw-semibold mb-4">
+              Connect Submittal Line Items<br>
+              <span class="text-secondary">To Cost Visibility</span>
+            </h2>
+            <p class="text-muted mb-4">
+              Many construction document tools stop at status tracking. They can show whether a submittal is open, closed, submitted, or approved. That helps, but it does not always answer the financial questions that matter to contractors.
+            </p>
+            <p class="text-muted mb-4">
+              BlueCollar adds line-item details to submittals, giving teams a clearer view of the materials, quantities, manufacturers, costs, delivery details, and approval information associated with each record.
+            </p>
+          </div>
+          <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+            <div class="bg-info-subtle rounded-5 p-4 p-sm-5">
+              <div class="fw-bold text-primary mb-3">Submittal Line Items</div>
+              <div class="bg-white rounded-4 p-3 shadow-sm mb-3">
+                <div class="d-flex justify-content-between small border-bottom pb-1 mb-1">
+                  <span class="text-muted">Item</span>
+                  <span class="fw-medium">Steel Beams - W16x36</span>
+                </div>
+                <div class="d-flex justify-content-between small border-bottom pb-1 mb-1">
+                  <span class="text-muted">Manufacturer</span>
+                  <span>Vulcraft / Nucor</span>
+                </div>
+                <div class="d-flex justify-content-between small border-bottom pb-1 mb-1">
+                  <span class="text-muted">Quantity</span>
+                  <span>24</span>
+                </div>
+                <div class="d-flex justify-content-between small border-bottom pb-1 mb-1">
+                  <span class="text-muted">Unit Cost</span>
+                  <span>$1,850.00</span>
+                </div>
+                <div class="d-flex justify-content-between small">
+                  <span class="text-muted">Status</span>
+                  <span class="text-success">Approved</span>
+                </div>
+              </div>
+              <div class="text-center small text-muted">
+                Line-item tracking: description, manufacturer, model, quantity, unit cost, delivery status, receipt date, approver
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Revision History -->
+    <section class="py-5 bg-light-custom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+            <div class="yellow-line mb-3"></div>
+            <h2 class="display-5 fw-semibold mb-4">
+              Keep Revisions Clean<br>
+              <span class="text-secondary">And Easy To Trace</span>
+            </h2>
+            <p class="text-muted mb-4">
+              Construction teams need to know which version is current. A missed revision can create confusion in the field, slow down approvals, or lead to decisions based on outdated information.
+            </p>
+            <p class="text-muted mb-4">
+              BlueCollar supports revision history for submittals, including Rev 0, Rev 1, Rev 2, and beyond. Once a new revision is created, older revisions become read-only, helping teams preserve the record without creating confusion about which version to act on.
+            </p>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="bg-white rounded-5 p-4 p-sm-5 shadow-soft">
+              <div class="fw-bold text-primary mb-3">Revision History</div>
+              <div class="d-flex align-items-center gap-3 border-start border-primary border-3 ps-3 mb-3">
+                <div>
+                  <div class="fw-semibold">Rev 2</div>
+                  <div class="small text-muted">Current &mdash; Approved</div>
+                  <div class="small text-muted">Aug 12, 2026 by J. Reyes</div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-3 border-start border-secondary border-2 ps-3 mb-3">
+                <div>
+                  <div class="fw-semibold">Rev 1</div>
+                  <div class="small text-muted">Read-only &mdash; Superseded</div>
+                  <div class="small text-muted">Jul 28, 2026 by M. Chen</div>
+                </div>
+              </div>
+              <div class="d-flex align-items-center gap-3 border-start border-secondary border-2 ps-3">
+                <div>
+                  <div class="fw-semibold">Rev 0</div>
+                  <div class="small text-muted">Read-only &mdash; Superseded</div>
+                  <div class="small text-muted">Jul 15, 2026 by A. Patel</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Email Integration -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left">
+            <div class="yellow-line mb-3"></div>
+            <h2 class="display-5 fw-semibold mb-4">
+              Send Submittals From NetSuite<br>
+              <span class="text-secondary">And Capture Replies</span>
+            </h2>
+            <p class="text-muted mb-4">
+              Vendors, subcontractors, and outside parties often need to participate in project workflows. That does not mean every external contact should need a new software license or a complicated login just to respond.
+            </p>
+            <p class="text-muted mb-4">
+              BlueCollar supports email integration so submittals can be sent directly from NetSuite. Vendors can reply by email, and responses can appear back in the project record. This keeps communication simple for external teams while helping contractors avoid the mess of disconnected inboxes.
+            </p>
+          </div>
+          <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+            <div class="bg-info-subtle rounded-5 p-4 p-sm-5">
+              <div class="d-flex flex-column gap-3">
+                <div class="bg-white rounded-4 p-3 shadow-sm d-flex align-items-center gap-3">
+                  <span class="badge bg-primary rounded-circle" style="width:36px;height:36px;">1</span>
+                  <div>
+                    <div class="fw-semibold small">Send From NetSuite</div>
+                    <div class="small text-muted">Submittal sent with PDF cover</div>
+                  </div>
+                </div>
+                <div class="text-center text-muted">&#8595;</div>
+                <div class="bg-white rounded-4 p-3 shadow-sm d-flex align-items-center gap-3">
+                  <span class="badge bg-secondary rounded-circle" style="width:36px;height:36px;">2</span>
+                  <div>
+                    <div class="fw-semibold small">Vendor Replies By Email</div>
+                    <div class="small text-muted">No login required</div>
+                  </div>
+                </div>
+                <div class="text-center text-muted">&#8595;</div>
+                <div class="bg-white rounded-4 p-3 shadow-sm d-flex align-items-center gap-3">
+                  <span class="badge bg-warning text-dark rounded-circle" style="width:36px;height:36px;">3</span>
+                  <div>
+                    <div class="fw-semibold small">Captured In Project Record</div>
+                    <div class="small text-muted">Response appears back in BlueCollar</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RFIs -->
+    <section class="py-5 bg-light-custom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+            <div class="yellow-line mb-3"></div>
+            <h2 class="display-5 fw-semibold mb-4">
+              Track RFIs<br>
+              <span class="text-secondary">Before Answers Get Lost</span>
+            </h2>
+            <p class="text-muted mb-4">
+              RFIs are where uncertainty becomes official. Field teams, project managers, subcontractors, or other stakeholders need a clear path to ask for clarification on drawings, specs, missing details, field conditions, conflicts, or project decisions.
+            </p>
+            <p class="text-muted mb-4">
+              Without a structured RFI workflow, those decisions often get buried in email threads, meeting notes, or informal conversations. BlueCollar PM Features give contractors a structured RFI workflow with assignee, manager, due date, status, files, and project record visibility.
+            </p>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="bg-white rounded-5 p-4 p-sm-5 shadow-soft">
+              <div class="fw-bold text-primary mb-3">RFI Workflow</div>
+              <div class="border rounded-4 p-3 mb-3">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <div class="fw-semibold">RFI-042</div>
+                    <div class="small text-muted">Structural connection detail at column line G-12 conflicts with MEP rough-in.</div>
+                  </div>
+                  <span class="badge bg-warning text-dark">Open</span>
+                </div>
+                <div class="d-flex justify-content-between small text-muted mt-2">
+                  <span>Assignee: T. Harrison</span>
+                  <span>Due: Aug 25, 2026</span>
+                </div>
+              </div>
+              <div class="border rounded-4 p-3">
+                <div class="d-flex justify-content-between align-items-start">
+                  <div>
+                    <div class="fw-semibold">RFI-041</div>
+                    <div class="small text-muted">Verify fire rating requirement for stairwell enclosure at Level 3.</div>
+                  </div>
+                  <span class="badge bg-success text-white">Closed</span>
+                </div>
+                <div class="d-flex justify-content-between small text-muted mt-2">
+                  <span>Assignee: L. Garcia</span>
+                  <span>Closed: Aug 18, 2026</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Analytics -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0" data-aos="fade-left">
+            <div class="yellow-line mb-3"></div>
+            <h2 class="display-5 fw-semibold mb-4">
+              See Project Document Health<br>
+              <span class="text-secondary">With Analytics</span>
+            </h2>
+            <p class="text-muted mb-4">
+              Project leaders need quick visibility into what is open, what is closed, and where work may be slowing down. BlueCollar's analytics view gives teams a dashboard-style snapshot of submittal and RFI status.
+            </p>
+            <p class="text-muted mb-4">
+              This gives managers and executives a faster way to understand the health of document workflows across a project. Instead of waiting for manual updates or digging through individual records, teams can quickly see open and closed counts and spot areas that need attention.
+            </p>
+          </div>
+          <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+            <div class="bg-info-subtle rounded-5 p-4 p-sm-5">
+              <div class="fw-bold text-primary mb-4">Document Analytics Dashboard</div>
+              <div class="row g-3">
+                <div class="col-6">
+                  <div class="bg-white rounded-4 p-3 text-center shadow-sm">
+                    <div class="fw-bold text-primary" style="font-size:1.75rem;">24</div>
+                    <div class="small text-muted">Open Submittals</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="bg-white rounded-4 p-3 text-center shadow-sm">
+                    <div class="fw-bold text-success" style="font-size:1.75rem;">86</div>
+                    <div class="small text-muted">Closed Submittals</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="bg-white rounded-4 p-3 text-center shadow-sm">
+                    <div class="fw-bold text-warning" style="font-size:1.75rem;">8</div>
+                    <div class="small text-muted">Open RFIs</div>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div class="bg-white rounded-4 p-3 text-center shadow-sm">
+                    <div class="fw-bold text-success" style="font-size:1.75rem;">31</div>
+                    <div class="small text-muted">Closed RFIs</div>
+                  </div>
+                </div>
+              </div>
+              <div class="text-center small text-muted mt-3">
+                Quick visibility into document workflow health across the project
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Daily Reports -->
+    <section class="py-5 bg-light-custom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+            <div class="yellow-line mb-3"></div>
+            <h2 class="display-5 fw-semibold mb-4">
+              Capture Job-Site Context<br>
+              <span class="text-secondary">With Daily Reports</span>
+            </h2>
+            <p class="text-muted mb-4">
+              Daily reports help contractors capture what happened on the job site. Labor, weather, progress, delays, issues, notes, and project activity all become part of the operating record.
+            </p>
+            <p class="text-muted mb-4">
+              When daily reports live outside the project and financial environment, the information can be harder to use later. Teams may know what happened on-site, but finance, operations, and leadership may not have a clear way to link that activity to project performance.
+            </p>
+            <p class="text-muted mb-4">
+              BlueCollar Daily Reports are designed to bring job-site records into the BlueCollar and NetSuite environment, giving contractors a stronger link between field activity and operational visibility.
+            </p>
+            <a class="btn btn-primary px-5 rounded-2 btn-lg" href="#demo">Book A Demo</a>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="bg-white rounded-5 p-4 p-sm-5 shadow-soft">
+              <div class="fw-bold text-primary mb-3">Daily Report Summary</div>
+              <div class="d-flex justify-content-between small border-bottom pb-2 mb-2">
+                <span class="text-muted">Date</span>
+                <span class="fw-medium">August 15, 2026</span>
+              </div>
+              <div class="d-flex justify-content-between small border-bottom pb-2 mb-2">
+                <span class="text-muted">Project</span>
+                <span class="fw-medium">Riverfront Tower</span>
+              </div>
+              <div class="d-flex justify-content-between small border-bottom pb-2 mb-2">
+                <span class="text-muted">Weather</span>
+                <span>Sunny, 82&deg;F</span>
+              </div>
+              <div class="d-flex justify-content-between small border-bottom pb-2 mb-2">
+                <span class="text-muted">Labor</span>
+                <span>48 Workers, 6 Foremen</span>
+              </div>
+              <div class="d-flex justify-content-between small border-bottom pb-2 mb-2">
+                <span class="text-muted">Work Description</span>
+                <span class="text-end" style="max-width:60%;">Level 4 concrete pour, MEP rough-in inspection</span>
+              </div>
+              <div class="d-flex justify-content-between small">
+                <span class="text-muted">Notes</span>
+                <span class="text-end" style="max-width:60%;">Inspection passed. Pour completed at 3:30 PM.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Configurable Workflows -->
+    <section class="py-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-10 text-center" data-aos="fade-up">
+            <div class="yellow-line mx-auto mb-3"></div>
+            <h2 class="display-5 fw-semibold mb-4">
+              Configurable Workflows<br>
+              <span class="text-secondary">For Real Contractor Needs</span>
+            </h2>
+            <p class="lead text-muted mb-4 mx-auto" style="max-width: 720px;">
+              No two contractors run projects exactly the same way. Approval chains, permissions, internal comments, external comments, notification triggers, and status rules often need to reflect how the company actually works.
+            </p>
+            <p class="text-muted mb-4 mx-auto" style="max-width: 720px;">
+              BlueCollar supports configurable workflows so contractors are not forced into a rigid, one-size-fits-all process. Teams can shape workflows around approval needs, role permissions, notification logic, and project requirements.
+            </p>
+            <div class="row row-cols-2 row-cols-sm-4 gy-3 mt-4 text-center small">
+              <div class="col"><span class="badge bg-primary bg-opacity-10 text-primary p-2 px-3">Approval chains</span></div>
+              <div class="col"><span class="badge bg-secondary bg-opacity-10 text-secondary p-2 px-3">Notification triggers</span></div>
+              <div class="col"><span class="badge bg-warning bg-opacity-25 text-dark p-2 px-3">Status rules</span></div>
+              <div class="col"><span class="badge bg-info bg-opacity-25 text-primary p-2 px-3">Role-based permissions</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cost-Aware Project Control -->
+    <section class="py-5 bg-light-custom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+            <div class="yellow-line mb-3"></div>
+            <h2 class="display-5 fw-semibold mb-4">
+              Not Just Document Tracking.<br>
+              <span class="text-secondary">Cost-Aware Project Control.</span>
+            </h2>
+            <p class="text-muted mb-4">
+              A submittal without financial context only tells part of the story. An RFI without a clear record can become a schedule or cost problem later. A daily report that sits outside the system may capture useful information, but it does not always help the broader business make better decisions.
+            </p>
+            <p class="text-muted mb-4">
+              BlueCollar PM Features are built around a stronger idea: project documentation should sit closer to cost, procurement, billing, <a href="/job-costing/" class="text-primary fw-medium">job costing</a>, and financial visibility.
+            </p>
+            <a class="btn btn-primary px-5 rounded-2 btn-lg" href="#demo">Book A Demo</a>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <div class="bg-white rounded-5 p-4 p-sm-5 shadow-soft">
+              <div class="fw-bold text-primary mb-3 text-center">Documentation Meets Financial Control</div>
+              <div class="d-flex flex-wrap justify-content-center gap-2">
+                <span class="badge bg-primary text-white p-2 px-3">Submittals</span>
+                <span class="badge bg-secondary text-white p-2 px-3">RFIs</span>
+                <span class="badge bg-info text-white p-2 px-3">Daily Reports</span>
+                <span class="badge bg-warning text-dark p-2 px-3">Job Costing</span>
+                <span class="badge bg-success text-white p-2 px-3">Procurement</span>
+                <span class="badge bg-primary text-white p-2 px-3">Billing</span>
+                <span class="badge bg-secondary text-white p-2 px-3">Change Orders</span>
+                <span class="badge bg-info text-white p-2 px-3">Financial Visibility</span>
+              </div>
+              <hr class="my-3">
+              <p class="small text-muted text-center mb-0">
+                Project documentation and financial control in one environment
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Workflow Diagram -->
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="yellow-line mx-auto mb-3"></div>
+          <h2 class="display-5 fw-semibold mb-3">
+            How The Workflow<br>
+            <span class="text-secondary">Comes Together</span>
+          </h2>
+        </div>
+        <div class="d-flex flex-column flex-sm-row align-items-center justify-content-center gap-2 gap-sm-0 flex-wrap" data-aos="fade-up">
+          <div class="workflow-step">
+            <div class="step-number">1</div>
+            <div class="fw-semibold small">Create</div>
+            <div class="small text-muted">Submittal, RFI, or daily report</div>
+          </div>
+          <div class="workflow-connector">&#8594;</div>
+          <div class="workflow-step">
+            <div class="step-number">2</div>
+            <div class="fw-semibold small">Assign</div>
+            <div class="small text-muted">Owner and stakeholders</div>
+          </div>
+          <div class="workflow-connector">&#8594;</div>
+          <div class="workflow-step">
+            <div class="step-number">3</div>
+            <div class="fw-semibold small">Submit</div>
+            <div class="small text-muted">For review or external response</div>
+          </div>
+          <div class="workflow-connector">&#8594;</div>
+          <div class="workflow-step">
+            <div class="step-number">4</div>
+            <div class="fw-semibold small">Communicate</div>
+            <div class="small text-muted">Send from NetSuite, capture replies</div>
+          </div>
+          <div class="workflow-connector">&#8594;</div>
+          <div class="workflow-step">
+            <div class="step-number">5</div>
+            <div class="fw-semibold small">Revise</div>
+            <div class="small text-muted">Preserve version history</div>
+          </div>
+          <div class="workflow-connector">&#8594;</div>
+          <div class="workflow-step">
+            <div class="step-number">6</div>
+            <div class="fw-semibold small">Close</div>
+            <div class="small text-muted">Approve &amp; track through completion</div>
+          </div>
+        </div>
+        <div class="text-center mt-4" data-aos="fade-up">
+          <a class="btn btn-primary btn-lg px-5 rounded-2 shadow-lg" href="#demo">See PM Features In Action</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Built For Sections -->
+    <section class="py-5 bg-light-custom">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="yellow-line mx-auto mb-3"></div>
+          <h2 class="display-5 fw-semibold mb-3">
+            Built For<br>
+            <span class="text-secondary">Every Role In The Project</span>
+          </h2>
+        </div>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 gy-4">
+          <div class="col" data-aos="fade-up">
+            <div class="feature-box text-start align-items-start">
+              <div class="icon-wrapper" style="width:48px;height:48px;">
+                <svg viewBox="0 0 24 24" style="width:24px;height:24px;"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+              </div>
+              <h5 class="fw-semibold">CFOs &amp; Finance Leaders</h5>
+              <p class="text-muted small mb-0">Align project documentation with billing, WIP, retainage, revenue recognition, and auditability.</p>
+            </div>
+          </div>
+          <div class="col" data-aos="fade-up" data-aos-delay="50">
+            <div class="feature-box text-start align-items-start">
+              <div class="icon-wrapper" style="width:48px;height:48px;">
+                <svg viewBox="0 0 24 24" style="width:24px;height:24px;"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H5.17L4 17.17V4h16v12z"/></svg>
+              </div>
+              <h5 class="fw-semibold">Project Managers</h5>
+              <p class="text-muted small mb-0">Manage submittals, RFIs, packages, revisions, due dates, ownership, files, and responses.</p>
+            </div>
+          </div>
+          <div class="col" data-aos="fade-up" data-aos-delay="100">
+            <div class="feature-box text-start align-items-start">
+              <div class="icon-wrapper" style="width:48px;height:48px;">
+                <svg viewBox="0 0 24 24" style="width:24px;height:24px;"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/></svg>
+              </div>
+              <h5 class="fw-semibold">IT Leaders &amp; NetSuite Admins</h5>
+              <p class="text-muted small mb-0">Governance, clean data, role-based access, and controlled workflows inside NetSuite.</p>
+            </div>
+          </div>
+          <div class="col" data-aos="fade-up" data-aos-delay="150">
+            <div class="feature-box text-start align-items-start">
+              <div class="icon-wrapper" style="width:48px;height:48px;">
+                <svg viewBox="0 0 24 24" style="width:24px;height:24px;"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+              </div>
+              <h5 class="fw-semibold">NetSuite Partners</h5>
+              <p class="text-muted small mb-0">A credible construction story. NetSuite ERP + BlueCollar construction layer + PM Features.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="yellow-line mx-auto mb-3"></div>
+          <h2 class="display-5 fw-semibold mb-3">
+            BlueCollar PM Features<br>
+            <span class="text-secondary">Compared To Other Approaches</span>
+          </h2>
+        </div>
+        <div class="table-responsive" data-aos="fade-up">
+          <table class="table table-bordered comparison-table">
+            <thead>
+              <tr>
+                <th style="min-width:160px;">Capability</th>
+                <th class="text-center">Spreadsheets &amp; Email</th>
+                <th class="text-center">Standalone PM Platforms</th>
+                <th class="text-center">NetSuite Alone</th>
+                <th class="text-center">BlueCollar PM Features</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="fw-medium">Submittal management</td>
+                <td class="text-center cross">&#10007;</td>
+                <td class="text-center check">&#10003;</td>
+                <td class="text-center cross">&#10007;</td>
+                <td class="text-center check">&#10003;</td>
+              </tr>
+              <tr>
+                <td class="fw-medium">RFI workflow</td>
+                <td class="text-center cross">&#10007;</td>
+                <td class="text-center check">&#10003;</td>
+                <td class="text-center cross">&#10007;</td>
+                <td class="text-center check">&#10003;</td>
+              </tr>
+              <tr>
+                <td class="fw-medium">Line-item cost visibility</td>
+                <td class="text-center cross">&#10007;</td>
+                <td class="text-center text-muted">&#8212;</td>
+                <td class="text-center cross">&#10007;</td>
+                <td class="text-center check">&#10003;</td>
+              </tr>
+              <tr>
+                <td class="fw-medium">Revision history</td>
+                <td class="text-center cross">&#10007;</td>
+                <td class="text-center check">&#10003;</td>
+                <td class="text-center cross">&#10007;</td>
+                <td class="text-center check">&#10003;</td>
+              </tr>
+              <tr>
+                <td class="fw-medium">Email-based vendor replies</td>
+                <td class="text-center text-muted">&#8212;</td>
+                <td class="text-center text-muted">&#8212;</td>
+                <td class="text-center cross">&#10007;</td>
+                <td class="text-center check">&#10003;</td>
+              </tr>
+              <tr>
+                <td class="fw-medium">Analytics dashboard</td>
+                <td class="text-center cross">&#10007;</td>
+                <td class="text-center check">&#10003;</td>
+                <td class="text-center cross">&#10007;</td>
+                <td class="text-center check">&#10003;</td>
+              </tr>
+              <tr>
+                <td class="fw-medium">Daily reports</td>
+                <td class="text-center text-muted">&#8212;</td>
+                <td class="text-center check">&#10003;</td>
+                <td class="text-center cross">&#10007;</td>
+                <td class="text-center check">&#10003;</td>
+              </tr>
+              <tr>
+                <td class="fw-medium">Configurable workflows</td>
+                <td class="text-center cross">&#10007;</td>
+                <td class="text-center text-muted">&#8212;</td>
+                <td class="text-center cross">&#10007;</td>
+                <td class="text-center check">&#10003;</td>
+              </tr>
+              <tr>
+                <td class="fw-medium">Native NetSuite financial context</td>
+                <td class="text-center cross">&#10007;</td>
+                <td class="text-center cross">&#10007;</td>
+                <td class="text-center text-muted">&#8212;</td>
+                <td class="text-center check">&#10003;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="text-center mt-4" data-aos="fade-up">
+          <a class="btn btn-primary btn-lg px-5 rounded-2 shadow-lg" href="#demo">Book A Demo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-light-custom">
+      <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+          <div class="yellow-line mx-auto mb-3"></div>
+          <h2 class="display-5 fw-semibold mb-3">
+            Frequently Asked<br>
+            <span class="text-secondary">Questions</span>
+          </h2>
+        </div>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="accordion faq-accordion" id="faqAccordion">
+              <div class="accordion-item" data-aos="fade-up">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    What Are BlueCollar PM Features?
+                  </button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-muted">
+                    BlueCollar PM Features are construction project management and document management workflows inside BlueCollar Projects for NetSuite. They are designed to help contractors manage submittals, RFIs, analytics, daily reports, project files, approvals, communication, and related visibility in a more structured way. The goal is to bring project documentation closer to financial and operational control.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="50">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    Can BlueCollar Manage Submittals Inside NetSuite?
+                  </button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-muted">
+                    Yes. BlueCollar supports submittal list views, packages, line items, revision history, email communication, files, status tracking, assignees, managers, due dates, and other key details. This gives contractors a more organized way to manage submittals while keeping the project record in closer alignment with the NetSuite environment.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    What Makes Submittal Line Items Important?
+                  </button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-muted">
+                    Submittal line items help connect document management to cost visibility. Instead of only tracking whether a submittal is open or approved, teams can see details such as quantity, unit cost, manufacturer, model, delivery status, receipt date, and approver. That gives contractors a clearer view of what the submittal represents financially and operationally.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="150">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                    Can Vendors Reply Without Logging Into Another System?
+                  </button>
+                </h3>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-muted">
+                    BlueCollar supports email-based communication for submittals. Project teams can send submittals from NetSuite, and vendors can reply by email. Those responses can be captured back into the project record, which helps reduce friction for external parties while keeping communication tied to the official workflow.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                    Does BlueCollar Replace Procore?
+                  </button>
+                </h3>
+                <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-muted">
+                    BlueCollar does not need to replace Procore in every environment. Some contractors may use BlueCollar PM Features inside NetSuite for certain workflows, while others may continue using Procore for specific field or project operations. The larger point is that BlueCollar helps bring construction workflows closer to NetSuite's financial backbone.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="250">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                    How Do RFIs Work In BlueCollar?
+                  </button>
+                </h3>
+                <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-muted">
+                    BlueCollar RFIs create a structured workflow for project questions, clarifications, files, due dates, ownership, status, and visibility into project records. This helps teams avoid losing key decisions in email threads or informal communication. It also gives project managers a cleaner way to track what is open, who is responsible, and what still needs an answer.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                    What Do The Analytics Show?
+                  </button>
+                </h3>
+                <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-muted">
+                    BlueCollar analytics provide a dashboard-style view of document workflow health, including counts of open and closed submittals and RFIs. This helps project leaders and executives see where items stand without relying only on manual updates. It gives teams a faster way to spot bottlenecks and follow up on aging items.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item" data-aos="fade-up" data-aos-delay="350">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                    Are Workflows Configurable?
+                  </button>
+                </h3>
+                <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-muted">
+                    Yes. BlueCollar workflows can be configured around approval chains, notification triggers, status rules, permissions, internal comments, external comments, and client-specific needs. That flexibility helps contractors build workflows that fit how they actually operate, rather than forcing every team into the same process.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="demo" class="py-5 cta-section">
+      <div class="container text-center" data-aos="fade-up">
+        <h2 class="display-5 fw-semibold mb-3">
+          Bring Project Documentation Closer<br>
+          <span style="color:#ffbf42;">To Financial Control</span>
+        </h2>
+        <p class="lead mb-4 mx-auto text-white" style="max-width: 680px; opacity:0.9;">
+          Submittals, RFIs, daily reports, and project documents are not side tasks. They shape cost, schedule, procurement, billing, and job performance. See how BlueCollar brings construction project management workflows into NetSuite.
+        </p>
+        <a class="btn btn-warning btn-lg px-5 py-2 rounded-2 fw-semibold text-dark shadow-lg" href="#contact">Book A Demo Today</a>
+      </div>
+    </section>
+
+    <!-- Contact / Demo Form Section -->
+    <section id="contact" class="py-5 bg-light-custom">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="text-center mb-4" data-aos="fade-up">
+              <div class="yellow-line mx-auto mb-3"></div>
+              <h2 class="display-5 fw-semibold mb-3">
+                See BlueCollar PM Features<br>
+                <span class="text-secondary">In Action</span>
+              </h2>
+            </div>
+            <div class="bg-white rounded-4 shadow-soft p-4 p-sm-5" data-aos="fade-up">
+              <form>
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label class="form-label fw-medium small text-muted">First Name</label>
+                    <input type="text" class="form-control form-control-lg" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="form-label fw-medium small text-muted">Last Name</label>
+                    <input type="text" class="form-control form-control-lg" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="form-label fw-medium small text-muted">Work Email</label>
+                    <input type="email" class="form-control form-control-lg" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="form-label fw-medium small text-muted">Company</label>
+                    <input type="text" class="form-control form-control-lg" required>
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="form-label fw-medium small text-muted">Role</label>
+                    <select class="form-select form-select-lg">
+                      <option value="">Select your role</option>
+                      <option>CFO / Controller</option>
+                      <option>Project Manager</option>
+                      <option>Project Controls</option>
+                      <option>IT Leader / NetSuite Admin</option>
+                      <option>NetSuite Partner / Consultant</option>
+                      <option>Operations Leader</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-6">
+                    <label class="form-label fw-medium small text-muted">Current Systems Used</label>
+                    <select class="form-select form-select-lg">
+                      <option value="">Select current systems</option>
+                      <option>Procore and NetSuite</option>
+                      <option>Procore only</option>
+                      <option>NetSuite only</option>
+                      <option>Evaluating NetSuite</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label class="form-label fw-medium small text-muted">Message (Optional)</label>
+                    <textarea class="form-control" rows="3"></textarea>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-lg w-100 py-3 rounded-2 shadow-lg">Book A Demo</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="py-5">
+    <div class="container">
+      <div class="row gy-4">
+        <div class="col-lg-4">
+          <img src="https://www.bluecollar.cloud/images/logo-bluecollar-standard.svg" alt="BlueCollar Cloud" height="36" class="mb-3" style="filter: brightness(10);">
+          <p class="small" style="opacity:0.8;">
+            BlueCollar brings construction project management workflows into NetSuite. Submittals, RFIs, analytics, daily reports, and project document visibility inside the ERP environment contractors already trust.
+          </p>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="fw-semibold mb-3" style="color:#ffbf42;">Products</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/">BlueCollar Platform</a></li>
+            <li class="mb-2"><a href="pm-features.html">PM Features</a></li>
+            <li class="mb-2"><a href="index.html">Procore Connector</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="fw-semibold mb-3" style="color:#ffbf42;">Solutions</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/construction-erp/">Construction ERP</a></li>
+            <li class="mb-2"><a href="/job-costing/">Job Costing</a></li>
+            <li class="mb-2"><a href="/aia-billing/">AIA Billing</a></li>
+            <li class="mb-2"><a href="/retainage/">Retainage</a></li>
+            <li class="mb-2"><a href="/wip-revenue/">WIP &amp; Revenue</a></li>
+            <li class="mb-2"><a href="/change-orders/">Change Orders</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="fw-semibold mb-3" style="color:#ffbf42;">Company</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="/about/">About</a></li>
+            <li class="mb-2"><a href="/blog/">Blog</a></li>
+            <li class="mb-2"><a href="/contact/">Contact</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h6 class="fw-semibold mb-3" style="color:#ffbf42;">Connect</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="#demo">Book A Demo</a></li>
+            <li class="mb-2"><a href="mailto:hello@bluecollarcloud.com">hello@bluecollarcloud.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="my-4" style="opacity:0.15;">
+      <div class="d-flex flex-column flex-sm-row justify-content-between align-items-center small" style="opacity:0.7;">
+        <span>&copy; 2026 BlueCollar Cloud. All rights reserved.</span>
+        <div class="d-flex gap-3 mt-2 mt-sm-0">
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Sticky CTA -->
+  <div class="sticky-cta-mobile d-sm-none">
+    <a class="btn btn-primary w-100 py-2 rounded-2 shadow-lg" href="#contact">Book A Demo</a>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 600,
+      once: true,
+      offset: 50
+    });
+
+    document.querySelectorAll('.accordion-button').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const question = this.textContent.trim();
+        if (window.gtag) {
+          gtag('event', 'faq_expansion', { 'question': question });
+        }
+      });
+    });
+
+    document.querySelectorAll('a[href*="demo"], a[href*="contact"]').forEach(link => {
+      link.addEventListener('click', function(e) {
+        if (window.gtag) {
+          gtag('event', 'cta_click', { 'cta_text': this.textContent.trim(), 'cta_location': this.closest('section')?.id || 'unknown' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
