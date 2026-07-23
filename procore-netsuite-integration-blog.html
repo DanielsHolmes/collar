@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Procore And NetSuite Should Not Be Two Separate Versions Of The Same Project</title>
+  <meta name="description" content="Procore runs field activity. NetSuite runs finance. See why contractors need cleaner approval control, cost visibility, and connected project context." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --bs-primary: #0B1E3D;
+      --bs-secondary: #0B1E3D;
+      --bs-warning: #FFCE54;
+      --bs-info: #1a3a5c;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #333;
+      overflow-x: hidden;
+    }
+    .text-primary { color: #0B1E3D !important; }
+    .bg-primary { background-color: #0B1E3D !important; }
+    .text-secondary { color: #0B1E3D !important; }
+    .bg-warning { background-color: #FFCE54 !important; }
+    .text-warning { color: #FFCE54 !important; }
+    .btn-warning { background-color: #FFCE54; border-color: #FFCE54; color: #0B1E3D; font-weight: 700; }
+    .btn-warning:hover { background-color: #e6b84d; border-color: #e6b84d; color: #0B1E3D; }
+    .btn-primary { background-color: #0B1E3D; border-color: #0B1E3D; }
+    .btn-primary:hover { background-color: #132D5E; border-color: #132D5E; }
+    .border-secondary { border-color: #FFCE54 !important; }
+
+    /* NAVBAR */
+    .navbar-custom { background: rgba(255,255,255,0.95); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+    .navbar-brand-custom { height: 38px; }
+    .nav-link-custom { color: #0B1E3D; font-weight: 500; font-size: 14px; padding: 8px 16px !important; transition: color 0.2s; }
+    .nav-link-custom:hover { color: #FFCE54; }
+    .dropdown-menu-custom { border: 1px solid #e9ecef; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.12); padding: 8px; }
+    .dropdown-item-custom { border-radius: 8px; padding: 10px 16px; font-size: 14px; color: #0B1E3D; transition: background 0.2s; }
+    .dropdown-item-custom:hover { background: #f0f4f8; color: #0B1E3D; }
+    .dropdown-item-custom small { display: block; color: #6c757d; font-size: 12px; margin-top: 2px; }
+    .btn-demo { background: #FFCE54; color: #0B1E3D; font-weight: 700; border: none; padding: 10px 28px; border-radius: 999px; font-size: 14px; transition: all 0.2s; }
+    .btn-demo:hover { background: #e6b84d; transform: translateY(-1px); box-shadow: 0 4px 12px rgba(255,206,84,0.4); }
+
+    /* MOBILE NAV */
+    .mobile-bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 9999; background: #fff; border-top: 2px solid #e9ecef; display: none; }
+    .mobile-bottom-nav a { color: #6c757d; font-size: 10px; text-decoration: none; text-align: center; padding: 8px 4px; flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+    .mobile-bottom-nav a.active, .mobile-bottom-nav a:hover { color: #0B1E3D; }
+    .mobile-bottom-nav svg { width: 20px; height: 20px; }
+    @media (max-width: 575.98px) { .mobile-bottom-nav { display: flex; } body { padding-bottom: 70px; } }
+
+    /* HERO */
+    .hero-section { background: linear-gradient(180deg, #f8f9fa 0%, #fff 100%); padding: 100px 0 60px; }
+    .hero-section h1 { font-weight: 800; color: #0B1E3D; line-height: 1.1; }
+    .hero-section .lead { color: #6c757d; font-size: 18px; }
+
+    /* ARTICLE */
+    .article-content { max-width: 800px; margin: 0 auto; }
+    .article-content p { font-size: 17px; line-height: 1.8; color: #444; margin-bottom: 24px; }
+    .article-content h2 { font-weight: 800; color: #0B1E3D; margin: 56px 0 20px; font-size: 28px; }
+    .article-content h3 { font-weight: 700; color: #0B1E3D; margin: 40px 0 14px; font-size: 20px; }
+    .article-content ul { margin-bottom: 24px; padding-left: 20px; }
+    .article-content ul li { font-size: 17px; line-height: 1.75; margin-bottom: 10px; color: #444; }
+    .article-content ul li::marker { color: #FFCE54; }
+
+    /* IMAGE BLOCKS */
+    .img-block { margin: 48px 0; border: 1px solid #e9ecef; border-radius: 16px; overflow: hidden; background: #f8f9fa; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .img-block img { width: 100%; height: auto; display: block; }
+    .img-block .caption { padding: 14px 20px; font-size: 13px; color: #6c757d; background: #fff; border-top: 1px solid #e9ecef; text-align: center; font-weight: 500; }
+
+    /* CALLOUT */
+    .callout-box { margin: 48px 0; padding: 32px 36px; background: #0B1E3D; color: #fff; border-radius: 16px; position: relative; overflow: hidden; }
+    .callout-box::before { content: ""; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: #FFCE54; }
+    .callout-box h4 { font-weight: 700; color: #FFCE54; margin-bottom: 10px; }
+    .callout-box p { color: rgba(255,255,255,0.85); margin-bottom: 0; font-size: 16px; line-height: 1.7; }
+
+    /* CTA SECTION */
+    .cta-section { background: #0B1E3D; padding: 80px 0; position: relative; overflow: hidden; }
+    .cta-section::before { content: ""; position: absolute; top: -120px; right: -120px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(255,206,84,0.15), transparent 70%); pointer-events: none; }
+    .cta-section h2 { font-weight: 800; color: #fff; }
+    .cta-section p { color: rgba(255,255,255,0.7); }
+
+    /* FAQ */
+    .faq-section { background: #f8f9fa; }
+    .faq-item { border-bottom: 1px solid #e9ecef; padding: 24px 0; }
+    .faq-item:first-child { border-top: 1px solid #e9ecef; }
+    .faq-q { font-weight: 600; color: #0B1E3D; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-size: 16px; }
+    .faq-q .icon { width: 28px; height: 28px; border-radius: 50%; background: #f0f4f8; display: flex; align-items: center; justify-content: center; font-size: 16px; color: #6c757d; transition: all 0.3s; flex-shrink: 0; }
+    .faq-item.open .faq-q .icon { background: #0B1E3D; color: #fff; transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+    .faq-item.open .faq-a { max-height: 600px; }
+    .faq-a p { font-size: 15px; line-height: 1.7; color: #6c757d; padding-top: 12px; }
+
+    /* FOOTER */
+    footer { background: #0B1E3D; }
+    footer a { color: rgba(255,255,255,0.7); text-decoration: none; transition: color 0.2s; }
+    footer a:hover { color: #FFCE54; }
+
+    /* OVAL TOP */
+    .bg-oval-top { background: white }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR DESKTOP -->
+  <nav class="navbar navbar-expand-sm navbar-custom fixed-top border-bottom border-light border-2 d-none d-sm-block py-3">
+    <div class="container">
+      <a class="navbar-brand" href="https://www.bluecollar.cloud/">
+        <img src="https://www.bluecollar.cloud/images/logo-bluecollar-standard.svg" alt="BlueCollar" class="navbar-brand-custom">
+      </a>
+      <div class="d-flex align-items-center ms-auto">
+        <ul class="navbar-nav d-flex flex-row align-items-center">
+          <li class="nav-item dropdown me-1">
+            <a class="nav-link nav-link-custom dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
+            <ul class="dropdown-menu dropdown-menu-custom">
+              <li><a class="dropdown-item dropdown-item-custom" href="https://www.bluecollar.cloud/netsuite-construction-software">Construction Software<small>NetSuite for contractors</small></a></li>
+              <li><a class="dropdown-item dropdown-item-custom" href="https://www.bluecollar.cloud/netsuite-project-management">Project Management<small>Field-to-finance visibility</small></a></li>
+              <li><a class="dropdown-item dropdown-item-custom" href="https://www.bluecollar.cloud/field-service-management">Field Service Management<small>Service operations on NetSuite</small></a></li>
+              <li><a class="dropdown-item dropdown-item-custom" href="https://www.bluecollar.cloud/manufacturing">Manufacturing<small>NetSuite for manufacturers</small></a></li>
+              <li><a class="dropdown-item dropdown-item-custom" href="https://www.bluecollar.cloud/netsuite-grant-management">Grant Management<small>Track and manage grants</small></a></li>
+            </ul>
+          </li>
+          <li class="nav-item me-1"><a class="nav-link nav-link-custom" href="https://www.bluecollar.cloud/usecases">Case Studies</a></li>
+          <li class="nav-item me-1"><a class="nav-link nav-link-custom" href="https://www.bluecollar.cloud/blog">Blog</a></li>
+          <li class="nav-item me-1"><a class="nav-link nav-link-custom" href="https://www.bluecollar.cloud/about">About</a></li>
+          <li class="nav-item me-1"><a class="nav-link nav-link-custom" href="https://www.bluecollar.cloud/careers">Careers</a></li>
+        </ul>
+        <a href="https://www.bluecollar.cloud/demo" class="btn btn-demo ms-3">Get Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- NAVBAR MOBILE -->
+  <nav class="navbar p-0 border-top fixed-top bg-white d-block d-sm-none" style="z-index:9998;">
+    <div class="container-fluid px-2">
+      <a class="navbar-brand m-0 py-2" href="https://www.bluecollar.cloud/">
+        <img src="https://www.bluecollar.cloud/images/logo-bluecollar.svg" alt="BlueCollar" style="height:30px;">
+      </a>
+    </div>
+    <div class="mobile-bottom-nav">
+      <a href="https://www.bluecollar.cloud/netsuite-construction-software">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z"/></svg>
+        Solutions
+      </a>
+      <a href="https://www.bluecollar.cloud/usecases" class="active">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"/></svg>
+        Case Studies
+      </a>
+      <a href="https://www.bluecollar.cloud/demo">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z"/><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z"/></svg>
+        Demo
+      </a>
+      <a href="https://www.bluecollar.cloud/about">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg>
+        About
+      </a>
+      <a href="https://www.bluecollar.cloud/blog">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5"/></svg>
+        Blog
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero-section" style="padding-top: 120px;">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="d-flex align-items-center gap-2 mb-3" data-aos="fade-up">
+            <span class="badge bg-warning text-dark fw-semibold" style="font-size:11px; letter-spacing:0.05em; text-transform:uppercase; padding:6px 14px; border-radius:999px;">Blog</span>
+            <span class="text-muted" style="font-size:13px;">Procore + NetSuite Integration</span>
+          </div>
+          <h1 class="display-5 fw-bold mb-3" data-aos="fade-up" data-aos-delay="100">Procore And NetSuite Should Not Be Two Separate Versions Of The Same Project</h1>
+          <p class="lead mb-4" data-aos="fade-up" data-aos-delay="200">Procore runs field activity. NetSuite runs finance. See why contractors need cleaner approval control, cost visibility, and connected project context.</p>
+          <div class="d-flex flex-wrap gap-2 mb-4" data-aos="fade-up" data-aos-delay="300">
+            <span class="badge bg-light text-muted border" style="font-size:11px; font-weight:500;">Procore NetSuite integration</span>
+            <span class="badge bg-light text-muted border" style="font-size:11px; font-weight:500;">NetSuite Procore connector</span>
+            <span class="badge bg-light text-muted border" style="font-size:11px; font-weight:500;">construction accounting integration</span>
+            <span class="badge bg-light text-muted border" style="font-size:11px; font-weight:500;">approval-gated sync</span>
+            <span class="badge bg-light text-muted border" style="font-size:11px; font-weight:500;">custom cost codes</span>
+          </div>
+          <div class="img-block" data-aos="fade-up" data-aos-delay="400">
+            <img src="drive-download-20260722T144210Z-1-001/Procore And NetSuite Should Not Be Two Separate Versions Of The Same Project.png" alt="Procore and NetSuite integration overview">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLE -->
+  <section class="py-5">
+    <div class="container">
+      <div class="article-content">
+
+        <p>Procore and NetSuite often tell two different parts of the same project story. Procore helps project and field teams manage activity closer to the job site. NetSuite gives finance teams the ERP control they need for accounting, billing, AP, AR, approvals, reporting, revenue, and financial visibility. Both systems matter. The problem starts when they operate like separate versions of the same job.</p>
+
+        <p>That split creates friction in places contractors can't afford to ignore. A project manager may see activity moving in Procore, while accounting is reviewing, approving, or correcting financial records in NetSuite. A controller may see costs, commitments, or vendor records without the project-side context that triggered them. Executives may not get a clear view until the team has already spent hours reconciling the same information across systems.</p>
+
+        <p>This is not a Procore-versus-NetSuite conversation. Contractors don't always need to replace one system with the other. They need a stronger connection between project activities and financial controls. That is where BlueCollar's Procore Connector comes in, providing contractors with a construction-aware bridge between Procore field workflows and the NetSuite financial backbone.</p>
+
+        <h2>Procore Runs The Job Site. NetSuite Runs Finance. The Project Lives In Both.</h2>
+
+        <p>Construction companies often use Procore because project teams need practical tools for field activity, communication, commitments, change orders, daily reports, punch lists, budgets, and job-site workflows. It helps teams manage what is happening closer to the work, where speed and visibility matter every day.</p>
+
+        <p>NetSuite plays a different role. It supports the business's financial structure, including billing, invoicing, approvals, AP, AR, revenue recognition, reporting, audit trails, and accounting controls. Finance teams depend on NetSuite because it provides a governed ERP environment with the controls they need to manage the company, not just a single project.</p>
+
+        <p>The issue is that construction projects do not live neatly inside one of those systems. They live in both. Field decisions influence financial records. Financial approvals influence what project teams should see. Vendor activity, commitments, cost codes, actuals, budget changes, and billing details all need context from both sides.</p>
+
+        <p>If the systems do not communicate cleanly, teams start filling the gap manually. That is where duplicate entry, spreadsheet cleanup, delayed reporting, and record confusion begin.</p>
+
+        <h2>Why The Gap Between Procore And NetSuite Creates Risk</h2>
+
+        <div class="img-block">
+          <img src="drive-download-20260722T144210Z-1-001/Why The Gap Between Procore And NetSuite Creates Risk.png" alt="Why the gap between Procore and NetSuite creates risk">
+          <div class="caption">Disconnected systems create blind spots, duplicate work, and delayed insight across the project.</div>
+        </div>
+
+        <p>Disconnected systems do more than slow people down. They create blind spots. A project team may know what changed in the field, but accounting may not see the reason behind a new cost or commitment. Finance may approve a record in NetSuite, but the project team may not see the update in Procore when it needs it.</p>
+
+        <p>That kind of gap can create real project risk:</p>
+
+        <ul>
+          <li>Purchase orders, bills, commitments, or change orders may appear in finance without a clear project-side trail.</li>
+          <li>Field teams may see project movement without knowing whether related financial records have been reviewed or approved.</li>
+          <li>Cost codes may not align cleanly across systems, which weakens budget visibility.</li>
+          <li>Vendors may exist in one system before the other has what it needs.</li>
+          <li>Teams may spend hours asking which record is current, complete, or ready to trust.</li>
+          <li>Executives may get delayed insight into budget movement, cost exposure, and project health.</li>
+        </ul>
+
+        <div class="callout-box">
+          <h4>The Real Cost</h4>
+          <p>It's not just the time spent fixing records. It is the loss of confidence. When project and finance teams do not share the same context, every number and status update can require another round of checking.</p>
+        </div>
+
+        <h2>Basic Integrations Often Miss The Construction Context</h2>
+
+        <div class="img-block">
+          <img src="drive-download-20260722T144210Z-1-001/Basic Integrations Often Miss The Construction Context.png" alt="Basic integrations often miss the construction context">
+          <div class="caption">Moving data is not enough. Construction data carries meaning, context, and financial impact.</div>
+        </div>
+
+        <p>Moving data from one system to another is not enough. Construction data has meaning behind it. A cost code is tied to how the contractor tracks work. A commitment can affect budget, vendor exposure, approval status, and project margin. A change order may involve financial, operational, and contractual considerations at the same time.</p>
+
+        <p>Basic integrations often struggle because they treat construction data like simple field mapping. They may push records in one direction, sync too much, sync too little, or rely on standard fields that do not reflect the contractor's actual financial structure.</p>
+
+        <p>That can create new problems:</p>
+
+        <ul>
+          <li>Records may sync before finance is ready.</li>
+          <li>Standard budget codes may not match the contractor's reporting structure.</li>
+          <li>Cost and revenue may get mixed in ways finance teams can't use.</li>
+          <li>Project teams may see incomplete or unapproved data.</li>
+          <li>Accounting may still need spreadsheets to explain what the sync did.</li>
+          <li>Users may lose confidence in the connected record.</li>
+        </ul>
+
+        <p>A Procore NetSuite integration needs more than technical connectivity. It needs construction accounting logic, approval controls, flexible mapping, and respect for how contractors manage budgets, costs, vendors, commitments, and financial reviews.</p>
+
+        <h2>Why Approval-Gated Sync Matters</h2>
+
+        <p>Not every record should become visible in Procore the moment it exists in NetSuite. Finance teams often need to review, approve, correct, validate, or finalize financial records before they should influence project conversations.</p>
+
+        <p>That is why approval-gated sync matters. BlueCollar's Procore Connector can keep unapproved records inside NetSuite while syncing approved records to Procore when they are ready. This gives accounting teams a control point without leaving project teams in the dark once the data is ready to share.</p>
+
+        <p>This creates a cleaner path for both sides of the business:</p>
+
+        <ul>
+          <li>Finance keeps NetSuite as the source of truth.</li>
+          <li>Project teams see financial updates only after review.</li>
+          <li>Unapproved records do not clutter Procore.</li>
+          <li>PMs get cleaner cost context without having to chase accounting for every detail.</li>
+          <li>Executives gain greater confidence that visible data has undergone the appropriate review.</li>
+        </ul>
+
+        <div class="callout-box">
+          <h4>Syncing the Right Data at the Right Time</h4>
+          <p>For CFOs, controllers, and accounting leaders, this is a major difference. Syncing data is easy to talk about. Syncing the right data at the right time is what protects financial control.</p>
+        </div>
+
+        <h2>Budget Visibility Should Not Require Spreadsheet Surgery</h2>
+
+        <p>Project managers need cost visibility to make smart decisions. They should not need to wait for a manual report or dig through an exported spreadsheet every time they want to understand where a project stands. Finance teams also need to protect the integrity of the numbers, which means the answer is not to let every system become its own version of accounting.</p>
+
+        <p>BlueCollar's Procore Connector helps bridge that tension by pulling approved project cost information from NetSuite into Procore. That can include original budget, committed costs, change orders, and actuals paid.</p>
+
+        <p>This gives Procore users better visibility while maintaining financial control in NetSuite. PMs can see more useful cost context in the work they are already managing. Finance can maintain the governed ERP record. Operations can have better conversations because the numbers are not trapped in disconnected reports.</p>
+
+        <h2>Cost Codes Need To Match How Contractors Actually Work</h2>
+
+        <p>Cost codes are not just technical fields. They are how contractors organize the financial story of a project. They shape job costing, budget tracking, reporting, commitments, change orders, and project performance review.</p>
+
+        <p>That is why generic cost code handling can create so much frustration. Many contractors have their own cost code structures, cost types, chart of accounts logic, budget categories, and reporting preferences. If an integration forces the company into standard locked codes, the sync may technically work while still weakening the business view.</p>
+
+        <p>BlueCollar's Procore Connector supports custom cost codes and cost types. That matters because contractors need connected systems to reflect how they actually measure and manage work.</p>
+
+        <p>When cost codes line up correctly, project and finance teams can trust the budget conversation more. When they do not, every report becomes a translation exercise. The right connector should reduce that translation work, not add another layer of confusion.</p>
+
+        <h2>Vendor And Commitment Data Should Move With Context</h2>
+
+        <p>Vendor records are another common source of friction. Procore may hold company and project directory information, while NetSuite requires vendor records for AP, billing, payments, approvals, compliance, and accounting activities. If the systems do not share that information cleanly, teams can waste time checking names, creating duplicate records, or delaying finance workflows.</p>
+
+        <p>BlueCollar's Procore Connector can sync companies from Procore's project directory into NetSuite as vendors. That helps reduce setup friction and gives accounting a cleaner path to the records it needs.</p>
+
+        <p>Commitments and change orders carry even more weight. Purchase commitments, subcontract commitments, and commitment change orders can affect budgets, approvals, vendor exposure, and project margin. These records should not move through disconnected paths without clear traceability.</p>
+
+        <p>Contractors need to know what changed, where it came from, who approved it, and how it affects the financial picture. That is why vendor and commitment data should not just move between systems. It should move with context.</p>
+
+        <h2>BlueCollar's Procore Connector Creates a Field-to-Finance Bridge</h2>
+
+        <div class="img-block">
+          <img src="drive-download-20260722T144210Z-1-001/BlueCollar's Procore Connector Creates a Field-to-Finance Bridge.png" alt="BlueCollar Procore Connector field-to-finance bridge">
+          <div class="caption">One connected workflow. Shared truth. Better decisions across every project.</div>
+        </div>
+
+        <p>BlueCollar's Procore Connector is a bidirectional connector between Procore and NetSuite, built for construction companies that want project and finance teams to work from a cleaner shared context.</p>
+
+        <p>It is designed for coexistence. Contractors can keep Procore where it works for field and project activity while using BlueCollar and NetSuite as the financial, billing, WIP, revenue, reporting, and accounting backbone.</p>
+
+        <p>The connector can support:</p>
+
+        <ul>
+          <li>Bidirectional data movement between Procore and NetSuite.</li>
+          <li>Approval-gated sync from NetSuite to Procore.</li>
+          <li>Project budget and cost visibility in Procore.</li>
+          <li>Original budget, committed costs, change orders, and actuals paid.</li>
+          <li>Cleaner separation of billing, contract, revenue, budget, and cost views.</li>
+          <li>Vendor directory sync from Procore into NetSuite.</li>
+          <li>Custom cost code and cost type support.</li>
+          <li>Commitment and change order workflow alignment.</li>
+          <li>Construction-aware mapping based on the contractor's process.</li>
+        </ul>
+
+        <div class="callout-box">
+          <h4>The Real Value</h4>
+          <p>It's not just about moving data. It's about connecting field activity to accounting truth — so teams can work with confidence, see the full picture, and make better decisions faster.</p>
+        </div>
+
+        <h2>What Each Team Gains From A Better Connection</h2>
+
+        <p>A stronger Procore and NetSuite connection helps the whole company, but each team feels the value differently.</p>
+
+        <h3>CFOs, Controllers, and Finance Leaders</h3>
+        <p>Gain stronger governance. Approval-gated sync helps protect what becomes visible in Procore. NetSuite stays the financial source of truth, while project teams get approved context once records are ready.</p>
+
+        <h3>Project Managers and Project Controls</h3>
+        <p>Gain better visibility into budget, cost, commitments, and approved financial updates. That means fewer manual follow-ups, fewer unclear records, and better conversations with finance.</p>
+
+        <h3>IT Leaders and NetSuite Admins</h3>
+        <p>Gain a more controlled integration path. Configurable mapping, custom cost code support, selective data movement, and structured workflow logic reduce the pressure to rely on fragile manual workarounds.</p>
+
+        <h3>Executives</h3>
+        <p>Gain a cleaner view of project and financial health. When field activity and accounting truth align, leadership can identify issues earlier and make decisions with greater confidence.</p>
+
+        <h2>A Better Way To Think About Construction ERP Integration</h2>
+
+        <p>Construction ERP integration should not be reduced to whether two systems can exchange data. That is only the technical layer. The real question is whether the connection supports how contractors actually manage work.</p>
+
+        <p>Does it respect approval control? Does it keep finance in charge of the truth about finance? Does it give PMs useful budget context? Does it support custom cost codes? Does it reduce reconciliation? Does it help teams trace records across field and accounting workflows?</p>
+
+        <p>Those are the questions that matter. Contractors are not looking for another sync that creates more cleanup work. They need a connection that reduces friction between project activity and financial control.</p>
+
+        <h2>Connect Procore And NetSuite Without Forcing Replacement</h2>
+
+        <p>Procore and NetSuite should not become two separate versions of the same project. Project teams need field and operational tools that help them move work forward. Finance teams need ERP control, approval discipline, billing accuracy, WIP visibility, reporting, and accounting governance.</p>
+
+        <p>BlueCollar's Procore Connector brings those needs closer together. It helps contractors keep Procore where it works, keep NetSuite as the financial backbone, and use BlueCollar as the construction-aware bridge between the two.</p>
+
+        <p>With bidirectional sync, approval-gated records, budget visibility, vendor sync, custom cost code support, and construction-specific workflow mapping, contractors gain a cleaner way to connect project activity with accounting truth.</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-section text-center">
+    <div class="container">
+      <h2 class="display-6 fw-bold mb-3" data-aos="fade-up">Connect Procore Field Workflows To NetSuite Financial Control</h2>
+      <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">See how BlueCollar's Procore Connector creates a cleaner bridge between project activity and accounting truth.</p>
+      <a href="https://www.bluecollar.cloud/demo" class="btn btn-warning btn-lg px-5 py-3 fw-bold" data-aos="fade-up" data-aos-delay="200">Book a Demo</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section py-5">
+    <div class="container">
+      <h2 class="text-center text-primary display-6 fw-bold mb-5" data-aos="fade-up">Frequently Asked Questions</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>What Is A Procore NetSuite Integration?</span><span class="icon">+</span></div>
+            <div class="faq-a"><p>A Procore NetSuite integration connects project and field activity in Procore with financial and accounting workflows in NetSuite. For contractors, the goal is usually to reduce duplicate entry, improve budget visibility, support cleaner vendor and commitment records, and give finance stronger control over project-related data.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Can Procore And NetSuite Work Together?</span><span class="icon">+</span></div>
+            <div class="faq-a"><p>Yes, Procore and NetSuite can work together when a structured connector is in place. Procore can remain useful for field and project teams, while NetSuite remains the financial and accounting system of record. BlueCollar's Procore Connector bridges that gap with bidirectional sync, approval control, cost visibility, vendor sync, and custom cost code support.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Does BlueCollar's Procore Connector Replace Procore?</span><span class="icon">+</span></div>
+            <div class="faq-a"><p>No, BlueCollar's Procore Connector is built for coexistence, not replacement. The connector helps contractors keep Procore in place for field and project workflows while connecting approved financial context from NetSuite. The goal is a cleaner bridge between Procore activity and NetSuite financial control.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>What Is Approval-Gated Sync?</span><span class="icon">+</span></div>
+            <div class="faq-a"><p>Approval-gated sync means records must meet an approval requirement before they sync from NetSuite into Procore. This helps finance teams control what becomes visible to project teams. Unapproved records can stay in NetSuite until they are reviewed and ready.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Why Do Contractors Need Custom Cost Code Support?</span><span class="icon">+</span></div>
+            <div class="faq-a"><p>Contractors often have their own cost code structures, cost types, chart of accounts logic, and reporting needs. Custom cost code support helps the connector reflect how the contractor actually tracks project performance, giving both finance and project teams a more accurate view.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Can Procore Vendors Sync Into NetSuite?</span><span class="icon">+</span></div>
+            <div class="faq-a"><p>Yes, the connector can sync companies from Procore's project directory into NetSuite as vendors. This helps reduce manual vendor setup and gives accounting a cleaner path to the records it needs for AP, bills, payments, approvals, and reporting.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>What Budget Data Can Sync Between NetSuite And Procore?</span><span class="icon">+</span></div>
+            <div class="faq-a"><p>Budget and cost visibility can include the original budget, committed costs, change orders, and actuals paid, with data flowing from NetSuite into Procore. This gives project teams better cost context while keeping NetSuite as the financial source of truth.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>How Is BlueCollar Different From Generic Middleware?</span><span class="icon">+</span></div>
+            <div class="faq-a"><p>Generic middleware may connect two systems, but it may not understand construction accounting. BlueCollar's Procore Connector is built around contractor workflows, including budgets, cost codes, vendors, commitments, change orders, billing, approval controls, and NetSuite financial governance.</p></div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Who Should Use The BlueCollar Procore Connector?</span><span class="icon">+</span></div>
+            <div class="faq-a"><p>The connector is built for construction companies that use Procore and NetSuite and want a cleaner bridge between project activity and financial control. It is especially useful for CFOs, controllers, project managers, IT leaders, NetSuite admins, and executives.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNER BADGE -->
+  <section class="py-5 bg-oval-top">
+    <div class="container text-center mt-4">
+      <div class="row">
+        <div class="col-sm-4 col-5 mx-auto">
+          <img src="https://www.bluecollar.cloud/images/NS24-Partner-Lockups-Alliance.png" alt="Oracle NetSuite Alliance Partner" class="img-fluid" data-aos="fade-up">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-primary pt-5 pb-1 text-light">
+    <div class="container py-5">
+      <h4 class="display-4 pb-3 pt-3 mb-5 fw-bold" data-aos="fade-up">We design <br> specifically for end-users</h4>
+      <div class="card mb-5 rounded-4 shadow-lg p-4 bg-info bg-opacity-25 border-0" data-aos="fade-up">
+        <div class="card-body">
+          <div class="row align-items-center">
+            <div class="col-sm-3 text-center">
+              <img src="https://www.bluecollar.cloud/images/logo-bluecollar.svg" style="width:13rem;" alt="BlueCollar Projects" class="img-fluid">
+            </div>
+            <div class="col">
+              <ul class="list-unstyled d-flex h5 m-0 justify-content-around py-3 py-sm-0">
+                <li class="py-sm-2"><a href="https://www.bluecollar.cloud/usecases" class="btn-link text-light text-decoration-none px-1 px-sm-3">Case Studies</a></li>
+                <li class="py-sm-2"><a href="https://www.bluecollar.cloud/blog" class="btn-link text-light text-decoration-none px-1 px-sm-3">Blog</a></li>
+                <li class="py-sm-2"><a href="https://www.bluecollar.cloud/about" class="btn-link text-light text-decoration-none px-1 px-sm-3">About us</a></li>
+                <li class="py-sm-2"><a href="https://www.bluecollar.cloud/careers" class="btn-link text-light text-decoration-none px-1 px-sm-3">Careers</a></li>
+              </ul>
+            </div>
+            <div class="col-sm-auto text-center">
+              <a href="https://www.bluecollar.cloud/demo" class="btn btn-light btn-lg px-5 py-2 shadow-lg border border-secondary border-2 fw-bold">Get Demo</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row pt-3" data-aos="fade-up">
+        <div class="col-sm-3">
+          <p>&copy; 2026 BlueCollar Cloud Solutions. All rights reserved.</p>
+          <p>Project metrics, manage financials, and collaborate with your team in real-time.</p>
+        </div>
+        <div class="col">
+          <p class="border-bottom pb-3 fw-bold">Contact us: sales@bluecollar.cloud</p>
+          <div class="d-flex justify-content-between align-items-center">
+            <span>
+              <a href="https://www.linkedin.com/company/bluecollar-cloud-solutions" target="_blank" class="btn-link text-light me-3">LinkedIn</a>
+              <a href="https://www.bluecollar.cloud/ssa" target="_blank" class="btn-link text-light">Standard Subscription Services Agreement</a>
+            </span>
+            <span>BlueCollar Cloud Solutions</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ once: true, duration: 800 });</script>
+</body>
+</html>
