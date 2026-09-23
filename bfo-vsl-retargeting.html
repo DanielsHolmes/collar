@@ -1204,9 +1204,11 @@
                   </p>
                 </div>
 
-                <!-- Clean Thumbnail with Kirt, BFO Branding, Play Icon (No Autoplay) -->
-                <div class="vsl-player-container" onclick="openVslModal()" role="button" aria-label="Play BFO Model Video Presentation">
-                  <div class="w-100 h-100 position-relative d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, var(--bc-navy-dark) 0%, var(--bc-navy-secondary) 60%, var(--bc-navy-light) 100%);">
+                <!-- Inline VSL Player Container (Plays Directly In Place - No Modal) -->
+                <div class="vsl-player-container" id="vslPlayerContainer">
+                  
+                  <!-- Cover / Thumbnail View -->
+                  <div id="vslCoverView" class="w-100 h-100 position-relative d-flex align-items-center justify-content-center" onclick="startInlineVsl()" role="button" aria-label="Play BFO Model Video Presentation" style="background: linear-gradient(135deg, var(--bc-navy-dark) 0%, var(--bc-navy-secondary) 60%, var(--bc-navy-light) 100%);">
                     
                     <!-- Slide Grid Texture -->
                     <div class="position-absolute w-100 h-100" style="opacity: 0.15; background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;"></div>
@@ -1246,6 +1248,43 @@
                     </div>
 
                   </div>
+
+                  <!-- Active In-Place Presentation View (Plays directly inside the card) -->
+                  <div id="vslActiveView" class="w-100 h-100 p-3 p-sm-4 d-none flex-column justify-content-between text-white position-relative" style="background: linear-gradient(135deg, var(--bc-navy-dark) 0%, var(--bc-navy-secondary) 100%);">
+                    
+                    <div class="d-flex justify-content-between align-items-center">
+                      <div class="d-flex align-items-center gap-2">
+                        <img src="https://www.bluecollar.cloud/images/logo-bluecollar-standard.svg" alt="BlueCollar" height="20" style="filter: brightness(0) invert(1);">
+                        <span class="badge text-dark fw-bold d-none d-sm-inline" style="background-color: var(--bc-yellow-accent); font-size: 0.68rem;">BFO BRIEFING</span>
+                      </div>
+                      <span class="badge small" id="slideIndicator" style="background-color: var(--bc-navy-light); color: #e2e8f0; font-size: 0.7rem;">Slide 1 of 4</span>
+                    </div>
+
+                    <div class="py-2" id="slideContent">
+                      <h3 class="fw-bold mb-1" id="slideTitle" style="font-size: 1.05rem; color: var(--bc-yellow-accent);">Why Better Software Alone Is Not Enough</h3>
+                      <p class="small text-white-50 mb-2" id="slideDesc" style="font-size: 0.78rem; line-height: 1.4;">
+                        Growing contractors hit an operating threshold where adding another software license or hiring an entry-level bookkeeper does not reconcile WIP, calm the Owner's involvement, or deliver reliable monthly visibility.
+                      </p>
+                      <div class="px-2 py-1 rounded" style="background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.12);">
+                        <span class="fw-semibold text-white" id="slideHighlight" style="font-size: 0.72rem;">BFO connects the platform, the personnel, and recurring cadence into a unified operating model.</span>
+                      </div>
+                    </div>
+
+                    <!-- Player Controls Bar -->
+                    <div class="pt-2 border-top" style="border-color: rgba(255, 255, 255, 0.15) !important;">
+                      <div class="d-flex align-items-center justify-content-between gap-2">
+                        <button type="button" class="btn-bc-warning py-0 px-2" style="min-height: 28px; font-size: 0.75rem;" id="playPauseBtn" onclick="toggleVslPlay()">
+                          ❚❚ Pause
+                        </button>
+                        <div class="progress flex-grow-1" style="height: 5px; background-color: rgba(255,255,255,0.2);">
+                          <div class="progress-bar" id="vslProgressBar" role="progressbar" style="width: 25%; background-color: var(--bc-yellow-accent);"></div>
+                        </div>
+                        <span class="text-white-50 font-monospace" id="vslTime" style="font-size: 0.72rem;">02:10 / 08:42</span>
+                      </div>
+                    </div>
+
+                  </div>
+
                 </div>
 
                 <!-- Video Takeaways List -->
@@ -1720,68 +1759,6 @@
 
   </main>
 
-  <!-- Interactive VSL Player Modal -->
-  <div class="modal fade" id="vslModal" tabindex="-1" aria-labelledby="vslModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
-      <div class="modal-content rounded-4 border-0 shadow-lg overflow-hidden bg-dark text-white">
-        
-        <div class="modal-header border-0 px-4 py-3 d-flex justify-content-between align-items-center" style="background-color: var(--bc-navy-dark);">
-          <div class="d-flex align-items-center gap-2">
-            <span class="badge text-dark fw-bold" style="background-color: var(--bc-yellow-accent);">BFO EXECUTIVE BRIEFING</span>
-            <span class="small text-white-50 d-none d-sm-inline">The Construction Back-Office Model</span>
-          </div>
-          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close" onclick="pauseVsl()"></button>
-        </div>
-
-        <div class="modal-body p-0 position-relative" style="aspect-ratio: 16 / 9; background: var(--bc-navy-dark);">
-          
-          <div id="presentationSlide" class="w-100 h-100 p-4 p-md-5 d-flex flex-column justify-content-between text-white position-relative" style="background: linear-gradient(135deg, var(--bc-navy-dark) 0%, var(--bc-navy-secondary) 100%);">
-            
-            <div class="d-flex justify-content-between align-items-center">
-              <img src="https://www.bluecollar.cloud/images/logo-bluecollar-standard.svg" alt="BlueCollar" height="28" style="filter: brightness(0) invert(1);">
-              <span class="badge small" id="slideIndicator" style="background-color: var(--bc-navy-light); color: #e2e8f0;">Slide 1 of 4: The Core Problem</span>
-            </div>
-
-            <div class="py-3" id="slideContent">
-              <h3 class="fw-bold mb-2" id="slideTitle" style="font-size: 1.25rem; color: var(--bc-yellow-accent);">Why Better Software Alone Is Not Enough</h3>
-              <p class="small text-white-50" id="slideDesc">
-                Growing contractors hit an operating threshold where adding another software license or hiring an entry-level bookkeeper does not reconcile WIP, calm the Owner's involvement, or deliver reliable monthly visibility.
-              </p>
-              <div class="p-3 rounded-3 mt-3" style="background-color: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15);">
-                <span class="fw-semibold text-white small" id="slideHighlight">BFO connects the platform, the personnel, and recurring cadence into a unified operating model.</span>
-              </div>
-            </div>
-
-            <!-- Player Controls Bar -->
-            <div class="pt-2 border-top" style="border-color: rgba(255, 255, 255, 0.15) !important;">
-              <div class="d-flex align-items-center justify-content-between gap-3">
-                <button type="button" class="btn-bc-warning py-1 px-3" id="playPauseBtn" onclick="toggleVslPlay()">
-                  ❚❚ Pause
-                </button>
-                <div class="progress flex-grow-1" style="height: 6px; background-color: rgba(255,255,255,0.2);">
-                  <div class="progress-bar" id="vslProgressBar" role="progressbar" style="width: 25%; background-color: var(--bc-yellow-accent);"></div>
-                </div>
-                <span class="small text-white-50 font-monospace" id="vslTime">02:10 / 08:42</span>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-        <div class="modal-footer border-0 px-4 py-3 d-flex justify-content-between" style="background-color: var(--bc-navy-dark);">
-          <div class="small text-white-50">
-            Presented by Kirt Dixon, Managing Partner
-          </div>
-          <a class="btn-bc-warning px-4" href="#bfo-form-card" data-bs-dismiss="modal" onclick="highlightHeroForm()">
-            Book a BFO Conversation →
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
   <!-- Specialist Modal (Secondary approved CTA) -->
   <div class="modal fade" id="specialistModal" tabindex="-1" aria-labelledby="specialistModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
@@ -2181,10 +2158,14 @@
       }
     ];
 
-    function openVslModal() {
-      const modalEl = document.getElementById('vslModal');
-      const modal = new bootstrap.Modal(modalEl);
-      modal.show();
+    function startInlineVsl() {
+      const cover = document.getElementById('vslCoverView');
+      const active = document.getElementById('vslActiveView');
+      if (cover) cover.classList.add('d-none');
+      if (active) {
+        active.classList.remove('d-none');
+        active.classList.add('d-flex');
+      }
 
       if (!trackingState.vslPlayed) {
         trackingState.vslPlayed = true;
