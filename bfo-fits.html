@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>See If BFO Fits Your Business | BlueCollar Financial Operations</title>
+  <meta name="description" content="Software + experienced construction-finance people, working together to strengthen WIP, job costing, reporting, and financial ownership.">
+  <meta name="robots" content="index, follow">
+
+  <!-- Fonts & Google Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  
+  <!-- Bootstrap 5.3 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --bs-primary: #04233d;
+      --bs-primary-rgb: 4, 35, 61;
+      --bs-secondary: #0c3557;
+      --bs-secondary-rgb: 12, 53, 87;
+      --bs-info: #6496c1;
+      --bs-warning: #ffbf42;
+      --bs-warning-rgb: 255, 191, 66;
+      --bs-orange: #ff9a01;
+      --bs-light-custom: #f8f9fa;
+      --bs-pale: #f5fbff;
+      --bs-border-subtle: #e0eaf3;
+      --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--font-main);
+      color: #212529;
+      background-color: #ffffff;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Google Icons helper */
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      vertical-align: middle;
+      display: inline-block;
+      line-height: 1;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      color: var(--bs-primary);
+      font-weight: 700;
+      line-height: 1.25;
+    }
+
+    .main-title {
+      font-size: clamp(2.1rem, 4.5vw, 2.85rem);
+      font-weight: 800;
+      color: #04233d;
+      letter-spacing: -0.02em;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3.2vw, 2.35rem);
+      font-weight: 700;
+      color: #04233d;
+      letter-spacing: -0.01em;
+    }
+
+    .subtitle-lead {
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+      color: #475569;
+      max-width: 780px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.6;
+    }
+
+    .section-desc {
+      font-size: 1.1rem;
+      color: #64748b;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Yellow decorative line like bfo.html */
+    .yellow-line {
+      width: 64px;
+      height: 4px;
+      background-color: #ffbf42;
+      border-radius: 2px;
+    }
+
+    /* Badge */
+    .bfo-badge {
+      display: inline-block;
+      background: #ffbf42;
+      color: #04233d;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 0.5rem 1.25rem;
+      border-radius: 50px;
+      box-shadow: 0 2px 10px rgba(255, 191, 66, 0.35);
+    }
+
+    /* Hero Gradient Background */
+    .hero-gradient {
+      background: radial-gradient(ellipse 130% 60% at 50% 100%, #f5fbff 0%, rgba(245, 251, 255, 0) 70%), #ffffff;
+    }
+
+    /* CTA Buttons */
+    .btn-bfo-cta {
+      display: inline-block;
+      background: #04233d;
+      color: #ffffff !important;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 1rem 2.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid #04233d;
+      box-shadow: 0 10px 25px rgba(4, 35, 61, 0.22);
+      transition: all 0.25s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .btn-bfo-cta:hover {
+      background: #0c3557;
+      border-color: #0c3557;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(4, 35, 61, 0.3);
+      color: #ffffff !important;
+    }
+
+    .btn-bfo-cta:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 14px rgba(4, 35, 61, 0.2);
+    }
+
+    /* Video Briefing Card */
+    .video-briefing-card {
+      background: radial-gradient(circle at 50% 30%, #0d3e68 0%, #06223b 80%, #031526 100%);
+      border: 1px solid rgba(100, 150, 193, 0.25);
+      border-radius: 1.25rem;
+      padding: 1.75rem 2rem;
+      color: #ffffff;
+      box-shadow: 0 20px 50px rgba(4, 35, 61, 0.22);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .video-briefing-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.45;
+      pointer-events: none;
+    }
+
+    .video-briefing-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 26px 60px rgba(4, 35, 61, 0.3);
+      border-color: rgba(255, 191, 66, 0.5);
+    }
+
+    .video-top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .video-brand-label {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .video-brand-label span.briefing-tag {
+      color: #cbd5e1;
+      font-weight: 500;
+      font-size: 0.88rem;
+    }
+
+    .video-duration-badge {
+      background-color: rgba(0, 0, 0, 0.55);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      font-size: 0.82rem;
+      font-weight: 600;
+      padding: 0.25rem 0.65rem;
+      border-radius: 6px;
+      color: #ffffff;
+    }
+
+    .video-center-cta {
+      padding: 3.5rem 1rem 3rem;
+      text-align: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .play-btn-circle {
+      width: 78px;
+      height: 78px;
+      background: linear-gradient(135deg, #ffbf42 0%, #f5a60b 100%);
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 8px 30px rgba(255, 191, 66, 0.5);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      margin-bottom: 1rem;
+    }
+
+    .play-btn-circle svg {
+      width: 30px;
+      height: 30px;
+      fill: #04233d;
+      margin-left: 4px;
+    }
+
+    .video-briefing-card:hover .play-btn-circle {
+      transform: scale(1.1);
+      box-shadow: 0 12px 36px rgba(255, 191, 66, 0.7);
+    }
+
+    .click-watch-text {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin: 0;
+      letter-spacing: 0.01em;
+    }
+
+    .video-bottom-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 1.1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .presenter-info {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-align: left;
+    }
+
+    .presenter-avatar {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: #ffbf42;
+      color: #04233d;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .presenter-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #ffffff;
+      line-height: 1.2;
+    }
+
+    .presenter-role {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      line-height: 1.2;
+      margin-top: 2px;
+    }
+
+    .video-model-tag {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: #ffbf42;
+      letter-spacing: 0.02em;
+    }
+
+    /* SECTION 1 CARDS: WIP STEP CARDS (as in bfo.html) */
+    .wip-step-card {
+      background: #ffffff;
+      border-radius: 1.25rem;
+      padding: 2.25rem 1.75rem;
+      border: 1px solid #e0eaf3;
+      box-shadow: 0 0.75rem 2.5rem rgba(0, 0, 0, 0.05);
+      height: 100%;
+      position: relative;
+      text-align: left;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .wip-step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 1.25rem 3.5rem rgba(4, 35, 61, 0.09);
+      border-color: #6496c1;
+    }
+
+    .wip-step-num {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: #04233d;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.15rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 4px 12px rgba(4, 35, 61, 0.18);
+    }
+
+    /* SECTION 2 CARDS: PILLAR CARDS (as in bfo.html) */
+    .pillar-card {
+      background: #ffffff;
+      border: 1px solid #e0eaf3;
+      border-radius: 1.5rem;
+      box-shadow: 0 1rem 3.5rem rgba(0, 0, 0, 0.06);
+      padding: 2.5rem 2rem;
+      height: 100%;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 1.5rem 4rem rgba(4, 35, 61, 0.1);
+      border-color: #6496c1;
+    }
+
+    .pillar-card .icon-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 1rem;
+      background: #04233d;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 6px 18px rgba(4, 35, 61, 0.2);
+    }
+
+    .pillar-card .icon-circle.icon-secondary {
+      background: #0c3557;
+    }
+
+    .pillar-card .icon-circle .material-symbols-outlined {
+      font-size: 32px;
+    }
+
+    /* Modal Form Styling */
+    .modal-content {
+      border-radius: 1.25rem;
+      border: none;
+      box-shadow: 0 25px 60px rgba(4, 35, 61, 0.25);
+      overflow: hidden;
+    }
+
+    .modal-header {
+      background-color: #04233d;
+      color: #ffffff;
+      padding: 1.25rem 1.75rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .modal-header .btn-close {
+      filter: invert(1) grayscale(100%) brightness(200%);
+      opacity: 0.8;
+    }
+
+    .modal-header .btn-close:hover {
+      opacity: 1;
+    }
+
+    .modal-body {
+      padding: 2.25rem 1.75rem;
+      background-color: #ffffff;
+    }
+
+    .form-label {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: #0c3557;
+      margin-bottom: 0.35rem;
+    }
+
+    .form-control, .form-select {
+      font-size: 0.95rem;
+      border: 1px solid #cdd3d8;
+      border-radius: 0.5rem;
+      padding: 0.65rem 0.9rem;
+      color: #212529;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    .form-control:focus, .form-select:focus {
+      border-color: #04233d;
+      box-shadow: 0 0 0 0.25rem rgba(4, 35, 61, 0.15);
+    }
+
+    /* Thank You State */
+    .thank-you-container {
+      text-align: center;
+      padding: 1.5rem 0.5rem;
+    }
+
+    .success-icon-badge {
+      width: 72px;
+      height: 72px;
+      background-color: #10b981;
+      color: #ffffff;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.2rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+    }
+
+    .btn-calendly-bfo {
+      display: inline-block;
+      background: linear-gradient(135deg, #ffbf42 0%, #f5a60b 100%);
+      color: #04233d !important;
+      font-size: 1.1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      padding: 1rem 2rem;
+      border-radius: 0.6rem;
+      border: none;
+      box-shadow: 0 8px 25px rgba(255, 191, 66, 0.45);
+      text-decoration: none;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+
+    .btn-calendly-bfo:hover {
+      background: linear-gradient(135deg, #ffc95e 0%, #fab42c 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 30px rgba(255, 191, 66, 0.6);
+      color: #04233d !important;
+    }
+
+    /* Agreement link */
+    .agreement-link {
+      color: #0284c7;
+      text-decoration: underline;
+      transition: color 0.15s ease;
+    }
+
+    .agreement-link:hover {
+      color: #0369a1;
+    }
+
+    .main-logo {
+      height: clamp(40px, 4.5vw, 48px);
+      width: auto;
+      max-width: 100%;
+      display: inline-block;
+      transition: transform 0.2s ease;
+    }
+
+    .main-logo:hover {
+      transform: scale(1.02);
+    }
+
+    @media (max-width: 767.98px) {
+      .video-briefing-card {
+        padding: 1.25rem 1.25rem;
+      }
+      .video-center-cta {
+        padding: 2.5rem 0.5rem 2rem;
+      }
+      .presenter-role {
+        display: none;
+      }
+      .modal-body {
+        padding: 1.5rem 1rem;
+      }
+      .wip-step-card, .pillar-card {
+        padding: 1.75rem 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Logo & Header -->
+  <header class="pt-5 pb-4 text-center">
+    <div class="container">
+      <div class="d-flex flex-column align-items-center justify-content-center">
+        <a href="https://www.bluecollar.cloud/" target="_blank" rel="noopener noreferrer" class="d-inline-block mb-4 pb-1">
+          <img src="https://www.bluecollar.cloud/images/logo-bluecollar-standard.svg" alt="BlueCollar Cloud" class="main-logo img-fluid">
+        </a>
+        <div>
+          <span class="bfo-badge">
+            BLUECOLLAR FINANCIAL OPERATIONS
+          </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero-gradient pt-4 pb-5">
+      <div class="container text-center">
+        
+        <!-- Main Headline -->
+        <h1 class="main-title mb-3">
+          See If BFO Fits Your Business.
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="subtitle-lead mb-4 pb-2">
+          Software + experienced construction-finance people, working together to strengthen WIP, job costing, reporting, and financial ownership.
+        </p>
+
+        <!-- Video Overview Card -->
+        <div class="mb-4 pb-2">
+          <div class="video-briefing-card" onclick="openBriefingModal()" role="button" tabindex="0" aria-label="Watch Overview Briefing">
+            
+            <!-- Video Top Bar -->
+            <div class="video-top-bar">
+              <div class="video-brand-label">
+                <span class="fw-bold">BLUECOLLAR</span>
+                <span class="small text-white-50">CLOUD</span>
+                <span class="text-white-50 mx-1">|</span>
+                <span class="briefing-tag">Executive Briefing</span>
+              </div>
+              <div class="video-duration-badge">
+                8:42
+              </div>
+            </div>
+
+            <!-- Play Button & Center CTA -->
+            <div class="video-center-cta">
+              <div class="play-btn-circle">
+                <svg viewBox="0 0 24 24">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <p class="click-watch-text">Click to Watch Overview</p>
+            </div>
+
+            <!-- Video Bottom Bar -->
+            <div class="video-bottom-bar">
+              <div class="presenter-info">
+                <div class="presenter-avatar">KD</div>
+                <div>
+                  <div class="presenter-name">Kirt Dixon</div>
+                  <div class="presenter-role">Managing Partner | BlueCollar</div>
+                </div>
+              </div>
+              <div class="video-model-tag">
+                Software + People Model
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Hero CTA Button -->
+        <div class="pt-2 mb-4">
+          <button type="button" class="btn btn-bfo-cta" data-bs-toggle="modal" data-bs-target="#bfoModal">
+            BOOK A BFO CONVERSATION
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: IS YOUR BACK OFFICE KEEPING UP WITH THE BUSINESS? -->
+    <section class="py-5 bg-white border-top border-light">
+      <div class="container py-3">
+        
+        <div class="text-center mb-5">
+          <div class="yellow-line mx-auto mb-3"></div>
+          <h2 class="section-title mb-3">
+            Is Your Back Office Keeping Up With the Business?
+          </h2>
+          <p class="section-desc mb-0">
+            As contractors grow, the financial operation has to grow with them. You may be at that point if:
+          </p>
+        </div>
+
+        <!-- 5 Cards Layout (Styled like the WIP section of bfo.html) -->
+        <div class="row g-4 justify-content-center mb-4">
+          
+          <!-- Card 01 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="wip-step-card">
+              <div class="wip-step-num">01</div>
+              <h3 class="h5 fw-bold text-primary mb-2">
+                You’re adding financial leadership
+              </h3>
+              <p class="text-muted small mb-0">
+                You're considering a Controller or Finance Manager as the business becomes more complex.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 02 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="wip-step-card">
+              <div class="wip-step-num">02</div>
+              <h3 class="h5 fw-bold text-primary mb-2">
+                WIP needs more attention
+              </h3>
+              <p class="text-muted small mb-0">
+                Project inputs, job costs, and WIP require a more consistent review process.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 03 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="wip-step-card">
+              <div class="wip-step-num">03</div>
+              <h3 class="h5 fw-bold text-primary mb-2">
+                Your systems need to scale
+              </h3>
+              <p class="text-muted small mb-0">
+                The business needs stronger tools and a more connected financial workflow.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 04 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="wip-step-card">
+              <div class="wip-step-num">04</div>
+              <h3 class="h5 fw-bold text-primary mb-2">
+                The Owner is still too involved
+              </h3>
+              <p class="text-muted small mb-0">
+                Too many financial questions and follow-ups still depend on leadership.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 05 -->
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="wip-step-card">
+              <div class="wip-step-num">05</div>
+              <h3 class="h5 fw-bold text-primary mb-2">
+                Project growth is increasing complexity
+              </h3>
+              <p class="text-muted small mb-0">
+                More jobs and more PMs create greater demands on reporting, visibility, and financial ownership.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: SOFTWARE + PEOPLE. ONE OPERATING MODEL. -->
+    <section class="py-5 bg-light-custom border-top border-light">
+      <div class="container py-3">
+        
+        <div class="text-center mb-5">
+          <div class="yellow-line mx-auto mb-3"></div>
+          <!-- Transition Line -->
+          <p class="lead fw-semibold text-secondary mb-2" style="font-size: 1.15rem;">
+            One business. One financial operating model.
+          </p>
+
+          <!-- Section Title -->
+          <h2 class="section-title mb-3">
+            Software + People. One Operating Model.
+          </h2>
+
+          <!-- Section Subtext -->
+          <p class="section-desc mb-0">
+            BFO brings together the three pieces a growing contractor needs:
+          </p>
+        </div>
+
+        <!-- 3 Pillar Cards (Styled like Better Software Needs... section in bfo.html with Google Icons) -->
+        <div class="row g-4 justify-content-center mb-5">
+          
+          <!-- Card 1: Financial Platform -->
+          <div class="col-12 col-md-4">
+            <div class="pillar-card">
+              <div class="icon-circle">
+                <span class="material-symbols-outlined">query_stats</span>
+              </div>
+              <h3 class="h4 fw-bold text-primary mb-2">
+                Financial Platform
+              </h3>
+              <p class="text-muted mb-0">
+                Project financials, job costing, WIP, and reporting in one stronger system.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2: Construction-Finance Expertise -->
+          <div class="col-12 col-md-4">
+            <div class="pillar-card">
+              <div class="icon-circle icon-secondary">
+                <span class="material-symbols-outlined">groups</span>
+              </div>
+              <h3 class="h4 fw-bold text-primary mb-2">
+                Construction-Finance Expertise
+              </h3>
+              <p class="text-muted mb-0">
+                Experienced professionals providing Controller-level review, judgment, and follow-through.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3: Recurring Financial Cadence -->
+          <div class="col-12 col-md-4">
+            <div class="pillar-card">
+              <div class="icon-circle">
+                <span class="material-symbols-outlined">event_repeat</span>
+              </div>
+              <h3 class="h4 fw-bold text-primary mb-2">
+                Recurring Financial Cadence
+              </h3>
+              <p class="text-muted mb-0">
+                A consistent rhythm for PM review, WIP, reporting, open items, and accountability.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Closing Text & CTA -->
+        <div class="text-center">
+          <p class="fw-bold text-primary mb-4" style="font-size: 1.25rem;">
+            A stronger back office built to grow with your projects.
+          </p>
+          <button type="button" class="btn btn-bfo-cta" data-bs-toggle="modal" data-bs-target="#bfoModal">
+            BOOK A BFO CONVERSATION
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="py-4 bg-white text-center border-top">
+    <div class="container">
+      <p class="mb-0 text-muted small">
+        By signing up, you agree to our <a href="https://www.bluecollar.cloud/terms/" target="_blank" rel="noopener noreferrer" class="agreement-link">Standard Subscription Services Agreement</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- BFO CONVERSATION MODAL (FORM + THANK YOU STATE) -->
+  <div class="modal fade" id="bfoModal" tabindex="-1" aria-labelledby="bfoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        
+        <div class="modal-header">
+          <h3 class="modal-title h5 fw-bold text-white mb-0" id="bfoModalLabel">
+            Book a BFO Conversation
+          </h3>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          
+          <!-- State 1: Form -->
+          <div id="modalFormContainer">
+            <form id="bfoLeadForm" onsubmit="handleBfoLeadSubmit(event)">
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label class="form-label" for="bfo-first-name">First Name *</label>
+                  <input type="text" id="bfo-first-name" class="form-control" placeholder="First Name" required>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="bfo-last-name">Last Name *</label>
+                  <input type="text" id="bfo-last-name" class="form-control" placeholder="Last Name" required>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="bfo-email">Work Email *</label>
+                  <input type="email" id="bfo-email" class="form-control" placeholder="name@company.com" required>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="bfo-company">Company *</label>
+                  <input type="text" id="bfo-company" class="form-control" placeholder="Company Name" required>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="bfo-role">Role / Title *</label>
+                  <input type="text" id="bfo-role" class="form-control" placeholder="Owner, CFO, VP..." required>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label" for="bfo-revenue">Annual Revenue *</label>
+                  <select id="bfo-revenue" class="form-select" required>
+                    <option value="" disabled selected>Select revenue range</option>
+                    <option value="under-5m">Under $5M</option>
+                    <option value="5m-10m">$5M–$10M</option>
+                    <option value="10m-15m">$10M–$15M</option>
+                    <option value="15m-25m">$15M–$25M</option>
+                    <option value="25m-plus">$25M+</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="bfo-system">Current Accounting / ERP System *</label>
+                  <input type="text" id="bfo-system" class="form-control" placeholder="e.g. QuickBooks, Sage 100/300/Intacct, Viewpoint, Excel..." required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="bfo-prompt">What is prompting you to look now? *</label>
+                  <select id="bfo-prompt" class="form-select" required>
+                    <option value="" disabled selected>Select primary reason</option>
+                    <option value="controller">We are considering hiring a Controller</option>
+                    <option value="system-upgrade">We are considering changing or upgrading our accounting system</option>
+                    <option value="wip-jobcosting">WIP / job costing is difficult to reconcile</option>
+                    <option value="growth-complexity">Growth is creating back-office complexity</option>
+                    <option value="owner-involved">The Owner is still too involved in financial operations</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="col-12 pt-3">
+                  <button type="submit" class="btn btn-bfo-cta w-100 py-3 text-center">
+                    Book a BFO Conversation
+                  </button>
+                  <p class="text-center text-muted small mt-2 mb-0">
+                    By signing up, you agree to our <a href="https://www.bluecollar.cloud/terms/" target="_blank" rel="noopener noreferrer" class="agreement-link">Standard Subscription Services Agreement</a>
+                  </p>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <!-- State 2: Thank You & Direct Calendly Button -->
+          <div id="modalThankYouContainer" class="thank-you-container d-none">
+            <div class="success-icon-badge">
+              ✓
+            </div>
+            <h3 class="h2 fw-bold text-primary mb-3">
+              Thank You
+            </h3>
+            <p class="text-muted mb-4 pb-2" style="font-size: 1.05rem;">
+              Your details have been submitted. Click below to schedule your BFO conversation:
+            </p>
+            <div class="px-sm-4">
+              <a href="https://calendly.com/bluecollar-marketing-w1ro/15min" target="_blank" rel="noopener noreferrer" class="btn btn-calendly-bfo">
+                Book a BFO Conversation
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- EXECUTIVE BRIEFING VIDEO MODAL -->
+  <div class="modal fade" id="briefingVideoModal" tabindex="-1" aria-labelledby="briefingVideoModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title h5 fw-bold text-white mb-0" id="briefingVideoModalLabel">
+            Executive Briefing | Software + People Model
+          </h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4 text-center">
+          <div class="ratio ratio-16x9 bg-dark rounded-3 mb-3 d-flex align-items-center justify-content-center" style="background: linear-gradient(135deg, #04233d 0%, #0c3557 100%);">
+            <div class="p-4 text-white">
+              <div class="play-btn-circle mb-3" style="width: 64px; height: 64px;">
+                <svg viewBox="0 0 24 24" style="width:24px;height:24px;fill:#04233d;margin-left:3px;">
+                  <path d="M8 5v14l11-7z"/>
+                </svg>
+              </div>
+              <h4 class="fw-bold mb-1 text-white">See If BFO Fits Your Business</h4>
+              <p class="small text-white-50 mb-3">Executive Briefing with Kirt Dixon (8:42)</p>
+              <button type="button" class="btn btn-bfo-cta py-2 px-4" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#bfoModal">
+                BOOK A BFO CONVERSATION
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    function handleBfoLeadSubmit(event) {
+      event.preventDefault();
+
+      // Send event if gtag is active
+      if (window.gtag) {
+        gtag('event', 'generate_lead', {
+          'event_category': 'BFO Lead',
+          'event_label': 'BFO Fit Overview Modal'
+        });
+      }
+
+      // Switch modal state to Thank You
+      const formContainer = document.getElementById('modalFormContainer');
+      const thankYouContainer = document.getElementById('modalThankYouContainer');
+      const modalLabel = document.getElementById('bfoModalLabel');
+
+      if (formContainer && thankYouContainer) {
+        formContainer.classList.add('d-none');
+        thankYouContainer.classList.remove('d-none');
+        if (modalLabel) {
+          modalLabel.textContent = 'Thank You';
+        }
+      }
+    }
+
+    function openBriefingModal() {
+      const modalEl = document.getElementById('briefingVideoModal');
+      if (modalEl && window.bootstrap) {
+        const modal = new bootstrap.Modal(modalEl);
+        modal.show();
+      }
+    }
+
+    // Reset modal state when closed
+    const bfoModalEl = document.getElementById('bfoModal');
+    if (bfoModalEl) {
+      bfoModalEl.addEventListener('hidden.bs.modal', function () {
+        const formContainer = document.getElementById('modalFormContainer');
+        const thankYouContainer = document.getElementById('modalThankYouContainer');
+        const modalLabel = document.getElementById('bfoModalLabel');
+        const form = document.getElementById('bfoLeadForm');
+
+        if (formContainer && thankYouContainer) {
+          formContainer.classList.remove('d-none');
+          thankYouContainer.classList.add('d-none');
+        }
+        if (modalLabel) {
+          modalLabel.textContent = 'Book a BFO Conversation';
+        }
+        if (form) {
+          form.reset();
+        }
+      });
+    }
+  </script>
+</body>
+</html>
